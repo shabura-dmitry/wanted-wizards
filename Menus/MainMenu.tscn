@@ -1,16 +1,61 @@
-[gd_scene format=2]
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/UI/MainMenu/QuitButtonDown.png" type="Texture" id=1]
+[ext_resource path="res://assets/UI/MainMenu/QuitButtonUp.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI/MainMenu/StartButtonUp.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/MainMenu/OptionsButtonUp.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/MainMenu/OptionsButtonDown.png" type="Texture" id=5]
+[ext_resource path="res://assets/UI/MainMenu/StartButtonDown.png" type="Texture" id=6]
+[ext_resource path="res://Menus/MainMenu.gd" type="Script" id=7]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 7 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 64.0
+margin_bottom = 104.0
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 20.0
-margin_right = 40.0
-margin_bottom = 20.0
+[node name="StartContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 64.0
+margin_bottom = 32.0
 alignment = 1
+
+[node name="StartButton" type="TextureButton" parent="VBoxContainer/StartContainer"]
+margin_right = 64.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 6 )
+stretch_mode = 2
+
+[node name="QuitContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 36.0
+margin_right = 64.0
+margin_bottom = 68.0
+alignment = 1
+
+[node name="QuitButton" type="TextureButton" parent="VBoxContainer/QuitContainer"]
+margin_right = 64.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 1 )
+stretch_mode = 2
+
+[node name="OptionsContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 72.0
+margin_right = 64.0
+margin_bottom = 104.0
+alignment = 1
+
+[node name="OptionsButton" type="TextureButton" parent="VBoxContainer/OptionsContainer"]
+margin_right = 64.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+stretch_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/StartContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
