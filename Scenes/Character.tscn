@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Trinket Frame.png" type="Texture" id=2]
 [ext_resource path="res://Assets/UI/Fonts/12px_1px-outline.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/TrinketPlaceholder.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Character.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/CharacterController.gd" type="Script" id=5]
 
 [node name="Character" type="Node2D"]
 script = ExtResource( 5 )
