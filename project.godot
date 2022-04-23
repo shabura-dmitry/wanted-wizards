@@ -15,18 +15,25 @@ _global_script_classes=[ {
 "path": "res://GlobalScripts/CharacterData.gd"
 }, {
 "base": "Reference",
+"class": "MapNode",
+"language": "GDScript",
+"path": "res://GlobalScripts/MapNode.gd"
+}, {
+"base": "Reference",
 "class": "Trinket",
 "language": "GDScript",
 "path": "res://GlobalScripts/Trinket.gd"
 } ]
 _global_script_class_icons={
 "CharacterData": "",
+"MapNode": "",
 "Trinket": ""
 }
 
 [application]
 
 config/name="Wanted-wizards"
+run/main_scene="res://Menus/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [importer_defaults]
