@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Reference",
+"class": "CharacterData",
+"language": "GDScript",
+"path": "res://GlobalScripts/CharacterData.gd"
+}, {
+"base": "Reference",
+"class": "Trinket",
+"language": "GDScript",
+"path": "res://GlobalScripts/Trinket.gd"
+} ]
+_global_script_class_icons={
+"CharacterData": "",
+"Trinket": ""
+}
+
 [application]
 
 config/name="Wanted-wizards"
