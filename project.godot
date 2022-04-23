@@ -36,6 +36,10 @@ config/name="Wanted-wizards"
 run/main_scene="res://Menus/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SavingLoading="*res://GlobalScripts/SavingLoading.gd"
+
 [importer_defaults]
 
 texture={

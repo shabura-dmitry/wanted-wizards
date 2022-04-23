@@ -6,7 +6,6 @@ onready var q3 = get_node("Fight/PlayerChars/Q3")
 
 func _ready():
 	load_chars()
-	advance_turn()
 
 
 
@@ -14,6 +13,7 @@ func load_chars():
 	#Get Character Object from Game Data
 	for character in SavingLoading.game_data["party"]:
 		#Create Character Scene
+	
 		var char_scene = load("res://Scenes/Character.tscn").instance()
 		#Pass character object to scene
 		char_scene.character_data = character
