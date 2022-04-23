@@ -3,10 +3,10 @@ class_name CharacterData
 
 var max_trinkets = 2
 var character_name setget set_character_name,get_character_name
-var max_health
-var health setget set_health,get_health
-var max_armor 
-var armor setget set_armor,get_armor
+var max_health =10
+var health = 10  setget set_health,get_health
+var max_armor =10
+var armor =10 setget set_armor,get_armor
 var character_sprite:String setget set_sprite,get_sprite
 var trinkets:Dictionary ={ 1: {}, 2:{}}
 
