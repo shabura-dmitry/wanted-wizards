@@ -13,49 +13,49 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 7 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MenuContainer" type="VBoxContainer" parent="."]
 margin_right = 64.0
 margin_bottom = 104.0
 alignment = 1
 
-[node name="StartContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="StartContainer" type="HBoxContainer" parent="MenuContainer"]
 margin_right = 64.0
 margin_bottom = 32.0
 alignment = 1
 
-[node name="StartButton" type="TextureButton" parent="VBoxContainer/StartContainer"]
+[node name="StartButton" type="TextureButton" parent="MenuContainer/StartContainer"]
 margin_right = 64.0
 margin_bottom = 32.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 6 )
 stretch_mode = 2
 
-[node name="QuitContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="QuitContainer" type="HBoxContainer" parent="MenuContainer"]
 margin_top = 36.0
 margin_right = 64.0
 margin_bottom = 68.0
 alignment = 1
 
-[node name="QuitButton" type="TextureButton" parent="VBoxContainer/QuitContainer"]
+[node name="QuitButton" type="TextureButton" parent="MenuContainer/QuitContainer"]
 margin_right = 64.0
 margin_bottom = 32.0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 1 )
 stretch_mode = 2
 
-[node name="OptionsContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="OptionsContainer" type="HBoxContainer" parent="MenuContainer"]
 margin_top = 72.0
 margin_right = 64.0
 margin_bottom = 104.0
 alignment = 1
 
-[node name="OptionsButton" type="TextureButton" parent="VBoxContainer/OptionsContainer"]
+[node name="OptionsButton" type="TextureButton" parent="MenuContainer/OptionsContainer"]
 margin_right = 64.0
 margin_bottom = 32.0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 5 )
 stretch_mode = 2
 
-[connection signal="pressed" from="VBoxContainer/StartContainer/StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/OptionsContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="MenuContainer/StartContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="MenuContainer/QuitContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="MenuContainer/OptionsContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]

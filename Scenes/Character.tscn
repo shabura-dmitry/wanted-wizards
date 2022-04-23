@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
+[ext_resource path="res://assets/UI/Fonts/PixelRPG_6.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Trinket Frame.png" type="Texture" id=2]
-[ext_resource path="res://Assets/UI/Fonts/12px_1px-outline.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Scenes/CharacterController.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/CharacterController.gd" type="Script" id=5]
 
 [node name="Character" type="Node2D"]
 script = ExtResource( 5 )
@@ -14,36 +14,36 @@ alignment = 1
 
 [node name="Character Name" type="Label" parent="VB"]
 margin_right = 68.0
-margin_bottom = 12.0
-custom_fonts/font = ExtResource( 3 )
+margin_bottom = 6.0
+custom_fonts/font = ExtResource( 1 )
 align = 1
 
 [node name="Health Label" type="Label" parent="VB"]
-margin_top = 16.0
+margin_top = 10.0
 margin_right = 68.0
-margin_bottom = 28.0
-custom_fonts/font = ExtResource( 3 )
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 1 )
 align = 1
 
 [node name="Armor Label" type="Label" parent="VB"]
-margin_top = 32.0
+margin_top = 20.0
 margin_right = 68.0
-margin_bottom = 44.0
-custom_fonts/font = ExtResource( 3 )
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
 align = 1
 
 [node name="Character Sprite" type="TextureRect" parent="VB"]
 margin_left = 18.0
-margin_top = 48.0
+margin_top = 30.0
 margin_right = 50.0
-margin_bottom = 80.0
+margin_bottom = 62.0
 rect_min_size = Vector2( 32, 32 )
 size_flags_horizontal = 4
 
 [node name="HB" type="HBoxContainer" parent="VB"]
-margin_top = 84.0
+margin_top = 66.0
 margin_right = 68.0
-margin_bottom = 116.0
+margin_bottom = 98.0
 size_flags_horizontal = 5
 alignment = 1
 
@@ -63,7 +63,7 @@ margin_right = -2.0
 margin_bottom = -2.0
 expand = true
 
-[node name="Trinkey Slot Two" type="TextureRect" parent="VB/HB"]
+[node name="Trinket Slot Two" type="TextureRect" parent="VB/HB"]
 margin_left = 36.0
 margin_right = 68.0
 margin_bottom = 32.0
@@ -71,7 +71,7 @@ rect_min_size = Vector2( 32, 32 )
 size_flags_horizontal = 4
 texture = ExtResource( 2 )
 
-[node name="Trinket Sprite" type="TextureRect" parent="VB/HB/Trinkey Slot Two"]
+[node name="Trinket Sprite" type="TextureRect" parent="VB/HB/Trinket Slot Two"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
