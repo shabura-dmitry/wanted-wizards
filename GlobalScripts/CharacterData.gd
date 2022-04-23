@@ -68,6 +68,8 @@ func get_trinket(slot:int)->Trinket:
 		return trinkets[slot]
 	return null
 	
+func can_target()->bool:
+	return true
 func to_string():
 	var s = character_name + ": \n"
 	s += "Max Health: " + str(max_health) + " \n"
