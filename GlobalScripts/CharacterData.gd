@@ -2,6 +2,8 @@ extends Reference
 class_name CharacterData
 
 var max_trinkets = 2
+var default_party_pos = 1 setget set_default_party_pos,get_default_party_pos
+var current_party_pos = 1 setget set_current_party_pos,get_current_party_pos
 var character_name setget set_character_name,get_character_name
 var max_health =10
 var health = 10  setget set_health,get_health
@@ -21,6 +23,22 @@ var trinkets:Dictionary ={ 1: {}, 2:{}}
 #	health = max_health
 #	armor = max_armor
 #	trinkets = [Trinket.new(),Trinket.new()]
+
+func _init(name:String):
+	character_name = name	
+	
+	
+func set_default_party_pos(val:int)->void:
+	if val >=1:
+		default_party_pos = val
+func get_default_party_pos()->int:
+	return default_party_pos
+	
+func set_current_party_pos(val:int)->void:
+	if val >=1:
+		current_party_pos = val
+func get_current_party_pos()->int:
+	return current_party_pos
 	
 func set_sprite(path:String)->void:
 	if path.length()>0:

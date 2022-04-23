@@ -1,44 +1,64 @@
 extends Node2D
 
+onready var q1 = get_node("Fight/PlayerChars/Q1")
+onready var q2 = get_node("Fight/PlayerChars/Q2")
+onready var q3 = get_node("Fight/PlayerChars/Q3")
 
 func _ready():
-	load_char()
-	load_char()
-	load_char()
-
-
-func load_char():
-	#Create Character Object
-	var character_data = CharacterData.new()
-	#Populate object with data
-	character_data.set_character_name("Whyld Whest")
-	character_data.set_sprite("res://Assets/CharacterPlaceholder.png")
-	
-	#Create character scene
-	var character_scene = load("res://Scenes/Character.tscn").instance()
-	#Give scene the character data
-	character_scene.character_data = character_data
-
-	#add scene to project
-	insert_char(character_scene, 1)
-	
-	#update scene to match data
-	character_scene.update_character_appearance()
+	load_chars()
+	advance_turn()
 
 
 
-func insert_char(character_scene, pos):
-	get_node("Fight/PlayerChars").add_child(character_scene)
-	
-	
-	
-	
-#var char_q
-#
-#func _init(_char_q):
-#	char_q = _char_q
-#
-#
-#func cycle_chars(char_q):
-#	for character in char_q: #for every object in this array
-#		character.set_party_pos(character.get_party_pos() + 1 % char_q.size())
+func load_chars():
+	#Get Character Object from Game Data
+	for character in SavingLoading.game_data["party"]:
+		#Create Character Scene
+		var char_scene = load("res://Scenes/Character.tscn").instance()
+		#Pass character object to scene
+		char_scene.character_data = character
+		
+		#Add characters to queue
+		match(character.get_default_party_pos()):
+			1: 
+				character.set_current_party_pos(1)
+				q1.add_child(char_scene)
+			2: 
+				character.set_current_party_pos(2)
+				q2.add_child(char_scene)
+			3: 
+				character.set_current_party_pos(3)
+				q3.add_child(char_scene)
+			
+		char_scene.update_character_appearance()
+			
+
+func clear_q():
+	for child in q1.get_children():
+		child.queue_free()
+	for child in q2.get_children():
+		child.queue_free()
+	for child in q3.get_children():
+		child.queue_free()
+
+func advance_turn():
+	clear_q()
+	for character in SavingLoading.game_data["party"]:
+		character.set_current_party_pos((character.get_current_party_pos() % SavingLoading.game_data["party"].size())+1)
+		var char_scene = new_char_scene(character)
+		match(character.get_current_party_pos()):
+			1: 
+				q1.add_child(char_scene)
+			2: 
+				q2.add_child(char_scene)
+			3: 
+				q3.add_child(char_scene)
+		char_scene.update_character_appearance()
+			
+		
+func new_char_scene(character_data):
+	#Create Character Scene
+	var char_scene = load("res://Scenes/Character.tscn").instance()
+	#Pass character object to scene
+	char_scene.character_data = character_data
+	return char_scene
