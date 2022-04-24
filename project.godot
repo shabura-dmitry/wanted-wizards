@@ -39,6 +39,7 @@ config/icon="res://icon.png"
 [autoload]
 
 SavingLoading="*res://GlobalScripts/SavingLoading.gd"
+MapGeneration="*res://GlobalScripts/MapGeneration.gd"
 
 [display]
 
