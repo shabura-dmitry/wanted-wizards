@@ -8,7 +8,10 @@ func _ready():
 	load_chars()
 
 
-
+func load_characters():
+	pass
+func load_enemies():
+	pass
 func load_chars():
 	#Get Character Object from Game Data
 	for character in SavingLoading.game_data["party"]:
