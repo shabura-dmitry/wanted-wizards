@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GunIconMockup.png-d83ed3dcdd5ed51a454d24f14e0e4f84.stex"
+path="res://.import/QuitButtonUp.png-919215d01c8d89bffbfddadfd754de4c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/GunIconMockup.png"
-dest_files=[ "res://.import/GunIconMockup.png-d83ed3dcdd5ed51a454d24f14e0e4f84.stex" ]
+source_file="res://Assets/UI/MainMenu/QuitButtonUp.png"
+dest_files=[ "res://.import/QuitButtonUp.png-919215d01c8d89bffbfddadfd754de4c.stex" ]
 
 [params]
 

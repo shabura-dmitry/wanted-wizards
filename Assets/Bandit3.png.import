@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SaveButtonUp.png-9e7b483c48c6e7fa95d5b5dc2f3b3015.stex"
+path="res://.import/Bandit3.png-d0950b4f8cfab73caff553f3dfc4d8b2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/MainMenu/SaveButtonUp.png"
-dest_files=[ "res://.import/SaveButtonUp.png-9e7b483c48c6e7fa95d5b5dc2f3b3015.stex" ]
+source_file="res://Assets/Bandit3.png"
+dest_files=[ "res://.import/Bandit3.png-d0950b4f8cfab73caff553f3dfc4d8b2.stex" ]
 
 [params]
 

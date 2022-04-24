@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bandit2.png-429e5345e0437b6ab7a5a2bdc9f45ddd.stex"
+path="res://.import/OptionsButtonDown.png-0d19e1dd9158bfa1ebff381600eeb19c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Bandit2.png"
-dest_files=[ "res://.import/Bandit2.png-429e5345e0437b6ab7a5a2bdc9f45ddd.stex" ]
+source_file="res://Assets/UI/MainMenu/OptionsButtonDown.png"
+dest_files=[ "res://.import/OptionsButtonDown.png-0d19e1dd9158bfa1ebff381600eeb19c.stex" ]
 
 [params]
 

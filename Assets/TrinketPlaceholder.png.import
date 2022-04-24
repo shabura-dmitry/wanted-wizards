@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TrinketPlaceholder.png-23b009aa2907810c9d16509447befab9.stex"
+path="res://.import/TrinketPlaceholder.png-1537741ab0144e5e9cf64d0b4579e5ff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TrinketPlaceholder.png"
-dest_files=[ "res://.import/TrinketPlaceholder.png-23b009aa2907810c9d16509447befab9.stex" ]
+source_file="res://Assets/TrinketPlaceholder.png"
+dest_files=[ "res://.import/TrinketPlaceholder.png-1537741ab0144e5e9cf64d0b4579e5ff.stex" ]
 
 [params]
 
