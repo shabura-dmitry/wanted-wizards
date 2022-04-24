@@ -18,11 +18,14 @@ func _ready():
 	char3.set_default_party_pos(3)
 	char3.set_sprite("res://Assets/CharacterPlaceholder.png")
 	game_data["party"].append(char3)
+	
+	
 func save_game()->void:
 	var file = File.new()
 	file.open(game_path, File.WRITE)
 	file.store_pascal_string(var2str(game_data))
 	file.close()
+
 
 func load_game()->void:
 	var file = File.new()

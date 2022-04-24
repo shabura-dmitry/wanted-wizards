@@ -11,48 +11,46 @@
 [node name="MenuContainer" type="VBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 24.0
-margin_bottom = 64.0
 alignment = 1
 script = ExtResource( 7 )
 
 [node name="StartContainer" type="HBoxContainer" parent="."]
-margin_top = 280.0
-margin_right = 1048.0
-margin_bottom = 312.0
+margin_top = 248.0
+margin_right = 1024.0
+margin_bottom = 280.0
 alignment = 1
 
 [node name="StartButton" type="TextureButton" parent="StartContainer"]
-margin_left = 492.0
-margin_right = 556.0
+margin_left = 480.0
+margin_right = 544.0
 margin_bottom = 32.0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 2 )
 stretch_mode = 2
 
 [node name="OptionsContainer" type="HBoxContainer" parent="."]
-margin_top = 316.0
-margin_right = 1048.0
-margin_bottom = 348.0
+margin_top = 284.0
+margin_right = 1024.0
+margin_bottom = 316.0
 alignment = 1
 
 [node name="OptionsButton" type="TextureButton" parent="OptionsContainer"]
-margin_left = 492.0
-margin_right = 556.0
+margin_left = 480.0
+margin_right = 544.0
 margin_bottom = 32.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 1 )
 stretch_mode = 2
 
 [node name="QuitContainer" type="HBoxContainer" parent="."]
-margin_top = 352.0
-margin_right = 1048.0
-margin_bottom = 384.0
+margin_top = 320.0
+margin_right = 1024.0
+margin_bottom = 352.0
 alignment = 1
 
 [node name="QuitButton" type="TextureButton" parent="QuitContainer"]
-margin_left = 492.0
-margin_right = 556.0
+margin_left = 480.0
+margin_right = 544.0
 margin_bottom = 32.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 5 )

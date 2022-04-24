@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Wanted-wizards"
-run/main_scene="res://Menus/MainMenu.tscn"
+run/main_scene="res://Scenes/Game.tscn"
 config/icon="res://icon.png"
 
 [autoload]
