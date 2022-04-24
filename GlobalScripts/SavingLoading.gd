@@ -2,6 +2,7 @@ extends Node
 #the filepath of the save file
 var game_path = "res://game.save"
 var game_data = {"party":[]}
+var settings ={"music_volume":100, "sound_volume":100}
 
 func _ready():
 	var char1 = CharacterData.new("CHAR 1")
