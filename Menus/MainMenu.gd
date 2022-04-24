@@ -1,7 +1,10 @@
 extends Control
 
 func _ready():
-	pass
+	var map = MapGeneration.generate_map(2,2)
+	print(map)
+	
+	
 	
 	
 	
