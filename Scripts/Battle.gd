@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 onready var q1 = get_node("Fight/PlayerChars/Q1")
 onready var q2 = get_node("Fight/PlayerChars/Q2")

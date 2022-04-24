@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CharacterPlaceholder.png-fd5a266e3d3b1b89ec7f00d419cc06d3.stex"
+path="res://.import/manasprite.png-17b3d8f5c0aa52189754e70cb1f84186.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CharacterPlaceholder.png"
-dest_files=[ "res://.import/CharacterPlaceholder.png-fd5a266e3d3b1b89ec7f00d419cc06d3.stex" ]
+source_file="res://assets/manasprite.png"
+dest_files=[ "res://.import/manasprite.png-17b3d8f5c0aa52189754e70cb1f84186.stex" ]
 
 [params]
 

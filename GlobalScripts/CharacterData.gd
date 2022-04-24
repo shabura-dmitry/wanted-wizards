@@ -5,10 +5,13 @@ var max_trinkets = 2
 var default_party_pos = 1 setget set_default_party_pos,get_default_party_pos
 var current_party_pos = 1 setget set_current_party_pos,get_current_party_pos
 var character_name setget set_character_name,get_character_name
-var max_health =10
-var health = 10  setget set_health,get_health
-var max_armor =10
-var armor =10 setget set_armor,get_armor
+var base_damage:int setget set_base_damage,get_base_damage
+var max_health:int setget set_max_health, get_max_health
+var health:int setget set_health,get_health
+var max_armor:int setget set_max_armor,get_max_armor
+var armor:int setget set_armor,get_armor
+var max_mana:int =0 setget set_max_mana,get_max_mana
+var mana:int = 0 setget set_mana,get_mana
 var character_sprite:String setget set_sprite,get_sprite
 var trinkets:Dictionary ={ 1: {}, 2:{}}
 
@@ -27,7 +30,38 @@ var trinkets:Dictionary ={ 1: {}, 2:{}}
 func _init(name:String):
 	character_name = name	
 	
+func set_max_mana(val:int)->void:
+	if val >=0:
+		max_mana = val
+func get_max_mana()->int:
+	return max_mana
 	
+func set_mana(val:int)->void:
+	if val >max_mana:
+		val = max_mana
+	if val < 0:
+		val = 0
+	mana = val
+	
+func get_mana()->int:
+	return mana
+	
+func set_max_armor(val:int)->void:
+	if val >=0:
+		max_armor = val
+		
+func get_max_armor()->int:
+	return max_armor
+		
+func set_max_health(val:int)->void:
+	if val >0:
+		max_health = val
+func get_max_health()->int:
+	return max_health
+func set_base_damage(val:int)->void:
+	base_damage= val
+func get_base_damage()->int:
+	return base_damage
 func set_default_party_pos(val:int)->void:
 	if val >=1:
 		default_party_pos = val

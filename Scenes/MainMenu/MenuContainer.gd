@@ -3,6 +3,7 @@ extends VBoxContainer
 
 func _on_StartButton_pressed():
 #	go to character select		
+	get_tree().get_root().get_node("Game").set_current_scene("res://Scenes/CharacterSelection/CharacterSelection.tscn")
 #	var battle_scene = load("res://Scenes/Battle.tscn").instance()
 #	get_tree().get_root().get_node("MainMenu").add_child(battle_scene)
 #	get_tree().get_root().get_node("MainMenu/MenuContainer").hide()

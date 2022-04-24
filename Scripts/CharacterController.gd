@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var character_data:CharacterData
 onready var name_label = get_node("VB/Character Name")

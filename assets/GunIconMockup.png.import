@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CharacterPlaceholder.png-fd5a266e3d3b1b89ec7f00d419cc06d3.stex"
+path="res://.import/GunIconMockup.png-d83ed3dcdd5ed51a454d24f14e0e4f84.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CharacterPlaceholder.png"
-dest_files=[ "res://.import/CharacterPlaceholder.png-fd5a266e3d3b1b89ec7f00d419cc06d3.stex" ]
+source_file="res://assets/GunIconMockup.png"
+dest_files=[ "res://.import/GunIconMockup.png-d83ed3dcdd5ed51a454d24f14e0e4f84.stex" ]
 
 [params]
 

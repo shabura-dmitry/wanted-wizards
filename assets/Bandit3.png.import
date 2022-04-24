@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CharacterPlaceholder.png-fd5a266e3d3b1b89ec7f00d419cc06d3.stex"
+path="res://.import/Bandit3.png-4816be98a0ada79befa22bbe02f4807f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CharacterPlaceholder.png"
-dest_files=[ "res://.import/CharacterPlaceholder.png-fd5a266e3d3b1b89ec7f00d419cc06d3.stex" ]
+source_file="res://assets/Bandit3.png"
+dest_files=[ "res://.import/Bandit3.png-4816be98a0ada79befa22bbe02f4807f.stex" ]
 
 [params]
 
