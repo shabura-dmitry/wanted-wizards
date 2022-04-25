@@ -10,8 +10,10 @@ func _ready():
 
 func load_characters():
 	pass
+	
 func load_enemies():
 	pass
+	
 func load_chars():
 	#Get Character Object from Game Data
 	for character in SavingLoading.game_data["party"]:
@@ -65,3 +67,7 @@ func new_char_scene(character_data):
 	#Pass character object to scene
 	char_scene.character_data = character_data
 	return char_scene
+
+
+func _on_LexiconButton_pressed():
+	get_tree().get_root().get_node("Game").set_current_scene("res://Scenes/Lexicon.tscn")

@@ -10,7 +10,7 @@ var max_health:int setget set_max_health, get_max_health
 var health:int setget set_health,get_health
 var max_armor:int setget set_max_armor,get_max_armor
 var armor:int setget set_armor,get_armor
-var max_mana:int =0 setget set_max_mana,get_max_mana
+var max_mana:int = 0 setget set_max_mana,get_max_mana
 var mana:int = 0 setget set_mana,get_mana
 var character_sprite:String setget set_sprite,get_sprite
 var trinkets:Dictionary ={ 1: {}, 2:{}}
@@ -18,6 +18,7 @@ var deck = [] setget set_deck,get_deck
 
 func set_deck(_deck:Array)->void:
 	deck = _deck
+	
 func get_deck()->Array:
 	return deck
 	
@@ -33,6 +34,7 @@ func _init(name:String):
 func set_max_mana(val:int)->void:
 	if val >=0:
 		max_mana = val
+		
 func get_max_mana()->int:
 	return max_mana
 
@@ -42,35 +44,40 @@ func set_mana(val:int)->void:
 	if val < 0:
 		val = 0
 	mana = val
-
+	
 func get_mana()->int:
 	return mana
 #
 func set_max_armor(val:int)->void:
 	if val >=0:
 		max_armor = val
-
+		
 func get_max_armor()->int:
 	return max_armor
 		
 func set_max_health(val:int)->void:
 	if val >0:
 		max_health = val
+		
 func get_max_health()->int:
 	return max_health
+	
 #func set_base_damage(val:int)->void:
 #	base_damage= val
 #func get_base_damage()->int:
 #	return base_damage
+
 func set_default_party_pos(val:int)->void:
 	if val >=1:
 		default_party_pos = val
+		
 func get_default_party_pos()->int:
 	return default_party_pos
 	
 func set_current_party_pos(val:int)->void:
 	if val >=1:
 		current_party_pos = val
+		
 func get_current_party_pos()->int:
 	return current_party_pos
 	
@@ -110,7 +117,6 @@ func set_armor(new_armor:int)->void:
 func get_armor()->int:
 	return armor
 		
-	
 func set_trinket(slot:int, trinket:Trinket):
 	if slot in range(1, max_trinkets):
 		trinkets[slot] = trinket

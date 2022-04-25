@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Battle.gd" type="Script" id=1]
+[ext_resource path="res://Assets/UI/MainMenu/LexiconButtonDown.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/MainMenu/LexiconButtonUp.png" type="Texture" id=3]
 
 [node name="Battle" type="Control"]
 script = ExtResource( 1 )
@@ -30,3 +32,11 @@ margin_right = 172.0
 margin_left = 176.0
 margin_right = 176.0
 size_flags_horizontal = 3
+
+[node name="LexiconButton" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+
+[connection signal="pressed" from="LexiconButton" to="." method="_on_LexiconButton_pressed"]

@@ -10,6 +10,7 @@ onready var trinket_two_sprite = get_node("VB/HB/Trinket Slot Two/Trinket Sprite
 
 func _ready():
 	pass
+	
 func update_character_appearance():
 	name_label.text = str(character_data.get_character_name())
 	health_label.text = str(character_data.get_health())
