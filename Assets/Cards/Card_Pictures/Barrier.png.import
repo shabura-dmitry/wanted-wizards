@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Barrier.png-4146a2ab1121932cc6acaf8211b67bbf.stex"
+path="res://.import/Barrier.png-5b6e8afa56c1bd7c16beabe3d3a2be16.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Cards/Card_Pictures/Barrier.png"
-dest_files=[ "res://.import/Barrier.png-4146a2ab1121932cc6acaf8211b67bbf.stex" ]
+source_file="res://Assets/Cards/Card_Pictures/Barrier.png"
+dest_files=[ "res://.import/Barrier.png-5b6e8afa56c1bd7c16beabe3d3a2be16.stex" ]
 
 [params]
 

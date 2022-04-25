@@ -11,7 +11,7 @@ func get_slinger():
 	slinger.set_max_armor(0)
 	slinger.set_max_mana(0)
 	
-	slinger.set_sprite("res://assets/DimasCowboy.png")
+	slinger.set_sprite("res://Assets/DimasCowboy.png")
 	return slinger
 	
 
@@ -26,7 +26,7 @@ func get_knight():
 	knight.set_max_armor(2)
 	knight.set_max_mana(0)
 	
-	knight.set_sprite("res://assets/DimasKnight.png")
+	knight.set_sprite("res://Assets/DimasKnight.png")
 	return knight
 
 func get_sorcerer():
@@ -40,5 +40,5 @@ func get_sorcerer():
 	sorc.set_max_armor(0)
 	sorc.set_max_mana(2)
 	
-	sorc.set_sprite("res://assets/DimasSorcerer.png")
+	sorc.set_sprite("res://Assets/DimasSorcerer.png")
 	return sorc

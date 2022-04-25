@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/StartButtonDown.png-8240369beab8c6092f1bef82a3d8d28d.stex"
+path="res://.import/StartButtonDown.png-43d6ef0ec985a1126b3cea7117c4edb6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/MainMenu/StartButtonDown.png"
-dest_files=[ "res://.import/StartButtonDown.png-8240369beab8c6092f1bef82a3d8d28d.stex" ]
+source_file="res://Assets/UI/MainMenu/StartButtonDown.png"
+dest_files=[ "res://.import/StartButtonDown.png-43d6ef0ec985a1126b3cea7117c4edb6.stex" ]
 
 [params]
 
