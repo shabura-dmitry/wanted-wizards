@@ -70,4 +70,4 @@ func new_char_scene(character_data):
 
 
 func _on_LexiconButton_pressed():
-	get_tree().get_root().get_node("Game").set_current_scene("res://Scenes/Lexicon.tscn")
+	get_tree().get_root().get_node("Game").set_current_scene("res://Scenes/MainMenu/Lexicon.tscn")
