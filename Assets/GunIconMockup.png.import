@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GunIconMockup.png-d65ebcdca0908b8bede94096ddd150a2.stex"
+path="res://.import/GunIconMockup.png-d83ed3dcdd5ed51a454d24f14e0e4f84.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GunIconMockup.png"
-dest_files=[ "res://.import/GunIconMockup.png-d65ebcdca0908b8bede94096ddd150a2.stex" ]
+source_file="res://assets/GunIconMockup.png"
+dest_files=[ "res://.import/GunIconMockup.png-d83ed3dcdd5ed51a454d24f14e0e4f84.stex" ]
 
 [params]
 

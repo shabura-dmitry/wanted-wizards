@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Greater_Buff.png-faea86d1d0dcc73812610e04cc4aa0e3.stex"
+path="res://.import/Greater_Buff.png-cd5dfca1e9185e3136b1b748d879f184.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cards/Card_Pictures/Greater_Buff.png"
-dest_files=[ "res://.import/Greater_Buff.png-faea86d1d0dcc73812610e04cc4aa0e3.stex" ]
+source_file="res://assets/Cards/Card_Pictures/Greater_Buff.png"
+dest_files=[ "res://.import/Greater_Buff.png-cd5dfca1e9185e3136b1b748d879f184.stex" ]
 
 [params]
 

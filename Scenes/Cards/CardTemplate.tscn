@@ -1,40 +1,64 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/UI/Fonts/PixelRPG_6.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/Cards/Card_Pictures/9mm_friendly_fire.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Cards/Card_Template.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Cards/Card_Pictures/9mm_basic_shot.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/Fonts/PixelRPG_6.tres" type="DynamicFont" id=3]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends TextureRect
 var card
 
 func update():
-	get_node(\"CardText\").text =card.get_card_name() + \"\\n\" + card.get_card_desc()
-	get_node(\"CardPicture\").texture = load(card.get_card_picture())
+	get_node(\"M/C2/M/CardText\").text =card.get_card_name() + \"\\n\" + card.get_card_desc()
+	get_node(\"M/C/M/CardPicture\").texture = load(card.get_card_picture())
 "
 
 [node name="CardTemplate" type="TextureRect"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 71.0
-margin_bottom = 103.0
+margin_right = 128.0
+margin_bottom = 192.0
 texture = ExtResource( 2 )
 script = SubResource( 1 )
 
-[node name="CardText" type="Label" parent="."]
-margin_left = 4.0
-margin_top = 39.0
-margin_right = 60.0
-margin_bottom = 92.0
-custom_fonts/font = ExtResource( 1 )
-text = "This is just a regular bullet
+[node name="M" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 3.0
+margin_right = -67.0
+margin_bottom = -100.0
 
-Damage: 5"
+[node name="C" type="Control" parent="M"]
+margin_right = 58.0
+margin_bottom = 89.0
+
+[node name="M" type="MarginContainer" parent="M/C"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 57.0
+margin_bottom = 33.0
+
+[node name="CardPicture" type="TextureRect" parent="M/C/M"]
+margin_right = 56.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="C2" type="Control" parent="M"]
+margin_right = 58.0
+margin_bottom = 89.0
+
+[node name="M" type="MarginContainer" parent="M/C2"]
+margin_left = 1.0
+margin_top = 36.0
+margin_right = 57.0
+margin_bottom = 89.0
+
+[node name="CardText" type="Label" parent="M/C2/M"]
+margin_top = 23.0
+margin_right = 56.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 3 )
 autowrap = true
-
-[node name="CardPicture" type="TextureRect" parent="."]
-margin_left = 15.0
-margin_top = 4.0
-margin_right = 60.0
-margin_bottom = 36.0
-texture = ExtResource( 3 )

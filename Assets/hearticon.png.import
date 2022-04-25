@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hearticon.png-470377c3f7f9b796a9221433e7d1bad5.stex"
+path="res://.import/hearticon.png-e2ec33a898e90269adfcd4162efb6f8e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/hearticon.png"
-dest_files=[ "res://.import/hearticon.png-470377c3f7f9b796a9221433e7d1bad5.stex" ]
+source_file="res://assets/hearticon.png"
+dest_files=[ "res://.import/hearticon.png-e2ec33a898e90269adfcd4162efb6f8e.stex" ]
 
 [params]
 

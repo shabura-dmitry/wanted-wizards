@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/9mm_friendly_fire.png-36a460fc782ff089a1b68dfcff9dcab4.stex"
+path="res://.import/9mm_friendly_fire.png-0a8ba8f16201af1204748d3b2c6eb439.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cards/Card_Pictures/9mm_friendly_fire.png"
-dest_files=[ "res://.import/9mm_friendly_fire.png-36a460fc782ff089a1b68dfcff9dcab4.stex" ]
+source_file="res://assets/Cards/Card_Pictures/9mm_friendly_fire.png"
+dest_files=[ "res://.import/9mm_friendly_fire.png-0a8ba8f16201af1204748d3b2c6eb439.stex" ]
 
 [params]
 

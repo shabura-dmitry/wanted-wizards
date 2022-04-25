@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DimasCowboy.png-56f448fafa68b8d0a4cc344073ab9e47.stex"
+path="res://.import/DimasCowboy.png-db495611aaea624523b384c43e67bff3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/DimasCowboy.png"
-dest_files=[ "res://.import/DimasCowboy.png-56f448fafa68b8d0a4cc344073ab9e47.stex" ]
+source_file="res://assets/DimasCowboy.png"
+dest_files=[ "res://.import/DimasCowboy.png-db495611aaea624523b384c43e67bff3.stex" ]
 
 [params]
 
