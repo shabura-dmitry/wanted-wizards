@@ -2,8 +2,8 @@ extends Reference
 class_name CharacterData
 
 var max_trinkets = 2
-var default_party_pos = 1 setget set_default_party_pos,get_default_party_pos
-var current_party_pos = 1 setget set_current_party_pos,get_current_party_pos
+var default_party_pos = 3 setget set_default_party_pos,get_default_party_pos
+var current_party_pos = 3 setget set_current_party_pos,get_current_party_pos
 var character_name setget set_character_name,get_character_name
 var base_damage:int setget set_base_damage,get_base_damage
 var max_health:int setget set_max_health, get_max_health
@@ -14,6 +14,7 @@ var max_mana:int =0 setget set_max_mana,get_max_mana
 var mana:int = 0 setget set_mana,get_mana
 var character_sprite:String setget set_sprite,get_sprite
 var trinkets:Dictionary ={ 1: {}, 2:{}}
+var deck = [] setget set_deck,get_deck
 
 
 #
@@ -26,7 +27,17 @@ var trinkets:Dictionary ={ 1: {}, 2:{}}
 #	health = max_health
 #	armor = max_armor
 #	trinkets = [Trinket.new(),Trinket.new()]
-
+func set_deck(_deck:Array)->void:
+	deck = _deck
+func get_deck()->Array:
+	return deck
+	
+func add_to_deck(card):
+	deck.append(card)
+	
+func remove_from_deck(card):
+	deck.remove(deck.find(card))
+	
 func _init(name:String):
 	character_name = name	
 	

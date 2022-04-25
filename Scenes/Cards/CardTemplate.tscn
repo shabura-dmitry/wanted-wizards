@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/UI/Fonts/PixelRPG_6.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Card_Template.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Cards/Card_Pictures/9mm_basic_shot.png" type="Texture" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends TextureRect
+var card
+
+func update():
+	get_node(\"CardText\").text =card.get_card_name() + \"\\n\" + card.get_card_desc()
+	get_node(\"CardPicture\").texture = load(card.get_card_picture())
+"
+
+[node name="CardTemplate" type="TextureRect"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 71.0
+margin_bottom = 103.0
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="CardText" type="Label" parent="."]
+margin_left = 4.0
+margin_top = 39.0
+margin_right = 60.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 1 )
+text = "This is just a regular bullet
+
+Damage: 5"
+autowrap = true
+
+[node name="CardPicture" type="TextureRect" parent="."]
+margin_left = 15.0
+margin_top = 4.0
+margin_right = 60.0
+margin_bottom = 36.0
+texture = ExtResource( 3 )

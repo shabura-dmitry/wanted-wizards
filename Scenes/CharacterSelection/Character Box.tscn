@@ -16,17 +16,17 @@ alignment = 1
 script = ExtResource( 5 )
 
 [node name="Name" type="Label" parent="."]
-margin_top = 219.0
+margin_top = 217.0
 margin_right = 204.0
-margin_bottom = 231.0
+margin_bottom = 229.0
 custom_fonts/font = ExtResource( 2 )
 text = "Character Name"
 align = 1
 
 [node name="CC" type="CenterContainer" parent="."]
-margin_top = 235.0
+margin_top = 233.0
 margin_right = 204.0
-margin_bottom = 299.0
+margin_bottom = 297.0
 
 [node name="CharacterSprite" type="TextureRect" parent="CC"]
 margin_left = 70.0
@@ -36,9 +36,9 @@ texture = ExtResource( 3 )
 flip_h = true
 
 [node name="CC2" type="CenterContainer" parent="."]
-margin_top = 303.0
+margin_top = 301.0
 margin_right = 204.0
-margin_bottom = 330.0
+margin_bottom = 328.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CC2"]
 margin_right = 204.0
@@ -102,3 +102,13 @@ margin_right = 204.0
 margin_bottom = 19.0
 custom_fonts/font = ExtResource( 2 )
 text = "10"
+
+[node name="CC3" type="CenterContainer" parent="."]
+margin_top = 332.0
+margin_right = 204.0
+margin_bottom = 332.0
+
+[node name="StarterDeck" type="GridContainer" parent="CC3"]
+margin_left = 102.0
+margin_right = 102.0
+columns = 2

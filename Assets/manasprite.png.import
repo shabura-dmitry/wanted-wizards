@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/manasprite.png-931291171be65b0bdba48369da3fbb6d.stex"
+path="res://.import/manasprite.png-17b3d8f5c0aa52189754e70cb1f84186.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/manasprite.png"
-dest_files=[ "res://.import/manasprite.png-931291171be65b0bdba48369da3fbb6d.stex" ]
+source_file="res://assets/manasprite.png"
+dest_files=[ "res://.import/manasprite.png-17b3d8f5c0aa52189754e70cb1f84186.stex" ]
 
 [params]
 

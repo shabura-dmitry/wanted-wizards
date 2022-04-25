@@ -19,12 +19,18 @@ func generate_basic_characters():
 	slinger_char.set_current_party_pos(3)
 	slinger_char.set_sprite("res://Assets/Cowboy.png")
 	
+	slinger_char.add_to_deck(CardManager.generate_card(CardManager.Cards.BasicShot))
+	slinger_char.add_to_deck(CardManager.generate_card(CardManager.Cards.BasicShot))
+	slinger_char.add_to_deck(CardManager.generate_card(CardManager.Cards.BasicShot))
+	slinger_char.add_to_deck(CardManager.generate_card(CardManager.Cards.BasicShot))
 	slinger_box.character_data = slinger_char
 	#new_char_box.update()
 	
 	character_slots.add_child(slinger_box)
 	#i HAVE to call .update after adding child, or it will crash
 	slinger_box.update()
+	
+	
 	
 	
 	var knight_box = character_box.instance()
@@ -37,6 +43,10 @@ func generate_basic_characters():
 	knight_char.set_default_party_pos(3)
 	knight_char.set_current_party_pos(3)
 	knight_char.set_sprite("res://Assets/Bandit2.png")
+	knight_char.add_to_deck(CardManager.generate_card(CardManager.Cards.BasicShot))
+	knight_char.add_to_deck(CardManager.generate_card(CardManager.Cards.BasicShot))
+	knight_char.add_to_deck(CardManager.generate_card(CardManager.Cards.BasicShot))
+	knight_char.add_to_deck(CardManager.generate_card(CardManager.Cards.PiercingShot))
 	
 	knight_box.character_data = knight_char
 	#new_char_box.update()
@@ -56,7 +66,10 @@ func generate_basic_characters():
 	assassin_char.set_default_party_pos(3)
 	assassin_char.set_current_party_pos(3)
 	assassin_char.set_sprite("res://Assets/Bandit3.png")
-	
+	assassin_char.add_to_deck(CardManager.generate_card(CardManager.Cards.PiercingShot))
+	assassin_char.add_to_deck(CardManager.generate_card(CardManager.Cards.PiercingShot))
+	assassin_char.add_to_deck(CardManager.generate_card(CardManager.Cards.PiercingShot))
+	assassin_char.add_to_deck(CardManager.generate_card(CardManager.Cards.PiercingShot))
 	assassin_box.character_data = assassin_char
 	#new_char_box.update()
 	
@@ -76,9 +89,12 @@ func generate_basic_characters():
 	wizard_char.set_max_mana(4)
 	wizard_char.set_mana(wizard_char.get_max_mana())
 	wizard_char.set_sprite("res://Assets/Bandit3.png")
-	
+	wizard_char.add_to_deck(CardManager.generate_card(CardManager.Cards.FriendlyFire))
+	wizard_char.add_to_deck(CardManager.generate_card(CardManager.Cards.FriendlyFire))
+	wizard_char.add_to_deck(CardManager.generate_card(CardManager.Cards.BasicShot))
+	wizard_char.add_to_deck(CardManager.generate_card(CardManager.Cards.BasicShot))
 	wizard_box.character_data = wizard_char
-	#new_char_box.update()
+
 	
 	character_slots.add_child(wizard_box)
 	#i HAVE to call .update after adding child, or it will crash
