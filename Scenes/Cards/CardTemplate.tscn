@@ -1,17 +1,21 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Assets/Cards/Card_Pictures/9mm_friendly_fire.png" type="Texture" id=1]
+[ext_resource path="res://Assets/UI/Fonts/PixelRPG_12.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Cards/Card_Template.png" type="Texture" id=2]
 [ext_resource path="res://Assets/UI/Fonts/PixelRPG_6.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Cards/Card_Pictures/Physical_Damage_Icon.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Cards/Card_Pictures/9mm_basic_shot.png" type="Texture" id=5]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends TextureRect
 var card
 
 func update():
-	get_node(\"M/C2/M/CardText\").text =card.get_card_name() + \"\\n\" + card.get_card_desc()
 	get_node(\"M/C/M/CardPicture\").texture = load(card.get_card_picture())
+	get_node(\"M/C2/TextureRect/Damage\").text = str(card.get_damage())
+	get_node(\"M/C2/Card Description/Label\").text = card.get_card_desc()
+	#get_node(\"M/C2/M/CardText\").text =card.get_card_name() + \"\\n\" + card.get_card_desc()
+	#get_node(\"M/C/M/CardPicture\").texture = load(card.get_card_picture())
 "
 
 [node name="CardTemplate" type="TextureRect"]
@@ -39,54 +43,11 @@ margin_bottom = 33.0
 [node name="CardPicture" type="TextureRect" parent="M/C/M"]
 margin_right = 56.0
 margin_bottom = 32.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource( 1 )
+texture = ExtResource( 5 )
 expand = true
-stretch_mode = 6
+stretch_mode = 7
 
 [node name="C2" type="Control" parent="M"]
-
-[node name="M2" type="MarginContainer" parent="M/C2"]
-margin_left = 1.0
-margin_top = 36.0
-margin_right = 57.0
-margin_bottom = 46.0
-
-[node name="Card Name" type="Label" parent="M/C2/M2"]
-margin_top = 2.0
-margin_right = 56.0
-margin_bottom = 8.0
-custom_fonts/font = ExtResource( 3 )
-text = "Friendly Fire"
-align = 1
-valign = 1
-
-[node name="M" type="MarginContainer" parent="M/C2"]
-margin_left = 1.0
-margin_top = 48.0
-margin_right = 57.0
-margin_bottom = 89.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="M/C2/M"]
-margin_right = 56.0
-margin_bottom = 41.0
-custom_constants/separation = 14
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="M/C2/M/HBoxContainer"]
-margin_left = 22.0
-margin_right = 34.0
-margin_bottom = 41.0
-texture = ExtResource( 4 )
-
-[node name="Label" type="Label" parent="M/C2/M/HBoxContainer/TextureRect"]
-margin_left = 13.0
-margin_top = 2.0
-margin_right = 18.0
-margin_bottom = 8.0
-custom_fonts/font = ExtResource( 3 )
-text = "5"
 
 [node name="Card Description" type="MarginContainer" parent="M/C2"]
 margin_left = 2.0
@@ -95,12 +56,31 @@ margin_right = 56.0
 margin_bottom = 88.0
 
 [node name="Label" type="Label" parent="M/C2/Card Description"]
-margin_top = 7.0
+margin_top = 1.0
 margin_right = 54.0
-margin_bottom = 19.0
+margin_bottom = 25.0
 custom_constants/line_spacing = 0
-custom_fonts/font = ExtResource( 3 )
-text = "Heals Targeted Ally"
+custom_fonts/font = ExtResource( 1 )
+text = "Target Enemy"
 align = 1
 valign = 1
 autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="M/C2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 39.0
+margin_right = 40.0
+margin_bottom = 59.0
+rect_min_size = Vector2( 24, 20 )
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Damage" type="Label" parent="M/C2/TextureRect"]
+margin_left = 10.0
+margin_top = 6.0
+margin_right = 15.0
+margin_bottom = 12.0
+custom_fonts/font = ExtResource( 3 )
+text = "1"

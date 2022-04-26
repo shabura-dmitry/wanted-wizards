@@ -12,43 +12,44 @@ alignment = 1
 script = ExtResource( 5 )
 
 [node name="Character Name" type="Label" parent="."]
-margin_right = 68.0
+margin_right = 96.0
 margin_bottom = 6.0
 custom_fonts/font = ExtResource( 1 )
 align = 1
 
 [node name="Health Label" type="Label" parent="."]
 margin_top = 10.0
-margin_right = 68.0
+margin_right = 96.0
 margin_bottom = 16.0
 custom_fonts/font = ExtResource( 1 )
 align = 1
 
 [node name="Armor Label" type="Label" parent="."]
 margin_top = 20.0
-margin_right = 68.0
+margin_right = 96.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 1 )
 align = 1
 
 [node name="Character Sprite" type="TextureRect" parent="."]
-margin_left = 18.0
 margin_top = 30.0
-margin_right = 50.0
-margin_bottom = 62.0
-rect_min_size = Vector2( 32, 32 )
+margin_right = 96.0
+margin_bottom = 126.0
+rect_min_size = Vector2( 96, 96 )
 size_flags_horizontal = 4
 texture = ExtResource( 3 )
+expand = true
 
 [node name="HB" type="HBoxContainer" parent="."]
-margin_top = 66.0
-margin_right = 68.0
-margin_bottom = 98.0
+margin_top = 130.0
+margin_right = 96.0
+margin_bottom = 162.0
 size_flags_horizontal = 5
 alignment = 1
 
 [node name="Trinket Slot One" type="TextureRect" parent="HB"]
-margin_right = 32.0
+margin_left = 14.0
+margin_right = 46.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
 size_flags_horizontal = 4
@@ -64,8 +65,8 @@ margin_bottom = -2.0
 expand = true
 
 [node name="Trinket Slot Two" type="TextureRect" parent="HB"]
-margin_left = 36.0
-margin_right = 68.0
+margin_left = 50.0
+margin_right = 82.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
 size_flags_horizontal = 4

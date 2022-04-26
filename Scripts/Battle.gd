@@ -22,6 +22,7 @@ func load_chars():
 		var char_scene = load("res://Scenes/Character.tscn").instance()
 		#Pass character object to scene
 		char_scene.character_data = character
+		char_scene
 		
 		#Add characters to queue
 		match(character.get_default_party_pos()):
@@ -35,7 +36,7 @@ func load_chars():
 				character.set_current_party_pos(3)
 				q3.add_child(char_scene)
 			
-		char_scene.update_character_appearance()
+#		char_scene.update_character_appearance()
 			
 
 func clear_q():

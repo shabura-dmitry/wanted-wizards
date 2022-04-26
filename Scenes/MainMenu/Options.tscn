@@ -1,68 +1,66 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/MainMenu/Options.gd" type="Script" id=1]
 [ext_resource path="res://Assets/UI/MainMenu/BackButtonDown.png" type="Texture" id=2]
 [ext_resource path="res://Assets/UI/MainMenu/BackButtonUp.png" type="Texture" id=3]
 
+[sub_resource type="Theme" id=1]
+
 [node name="OptionsContainer" type="VBoxContainer"]
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -32.0
-margin_right = 32.0
+margin_left = -136.0
+margin_right = 136.0
+custom_constants/separation = 4
 alignment = 1
 script = ExtResource( 1 )
 
-[node name="BackContainer" type="HBoxContainer" parent="."]
-margin_top = 264.0
-margin_right = 250.0
-margin_bottom = 296.0
-rect_min_size = Vector2( 250, 0 )
-alignment = 1
+[node name="SoundOption" type="HBoxContainer" parent="."]
+margin_right = 272.0
+margin_bottom = 16.0
 
-[node name="BackButton" type="TextureButton" parent="BackContainer"]
-margin_left = 93.0
-margin_right = 157.0
-margin_bottom = 32.0
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 2 )
-
-[node name="MusicContainer" type="HBoxContainer" parent="."]
-margin_top = 300.0
-margin_right = 250.0
-margin_bottom = 316.0
-alignment = 1
-
-[node name="MusicSlider" type="HSlider" parent="MusicContainer"]
-margin_right = 151.0
+[node name="SoundSlider" type="HSlider" parent="SoundOption"]
+margin_right = 172.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
 
-[node name="Music Volume Label" type="Label" parent="MusicContainer"]
-margin_left = 155.0
+[node name="Sound Volume Label" type="Label" parent="SoundOption"]
+margin_left = 176.0
 margin_top = 1.0
-margin_right = 250.0
-margin_bottom = 15.0
-text = "Music Volume:"
-
-[node name="SoundContainer" type="HBoxContainer" parent="."]
-margin_top = 320.0
-margin_right = 250.0
-margin_bottom = 336.0
-alignment = 1
-
-[node name="SoundSlider" type="HSlider" parent="SoundContainer"]
-margin_right = 150.0
-margin_bottom = 16.0
-size_flags_horizontal = 3
-
-[node name="Sound Volume Label" type="Label" parent="SoundContainer"]
-margin_left = 154.0
-margin_top = 1.0
-margin_right = 250.0
+margin_right = 272.0
 margin_bottom = 15.0
 text = "Sound Volume:"
 
-[connection signal="pressed" from="BackContainer/BackButton" to="." method="_on_BackButton_pressed"]
-[connection signal="value_changed" from="MusicContainer/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
-[connection signal="value_changed" from="SoundContainer/SoundSlider" to="." method="_on_SoundSlider_value_changed"]
+[node name="MusicOption" type="HBoxContainer" parent="."]
+margin_top = 20.0
+margin_right = 272.0
+margin_bottom = 36.0
+
+[node name="MusicSlider" type="HSlider" parent="MusicOption"]
+margin_right = 173.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+theme = SubResource( 1 )
+
+[node name="Music Volume Label" type="Label" parent="MusicOption"]
+margin_left = 177.0
+margin_top = 1.0
+margin_right = 272.0
+margin_bottom = 15.0
+text = "Music Volume:"
+
+[node name="Back" type="TextureButton" parent="."]
+margin_top = 40.0
+margin_right = 272.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+expand = true
+stretch_mode = 4
+
+[connection signal="value_changed" from="SoundOption/SoundSlider" to="." method="_on_SoundSlider_value_changed"]
+[connection signal="value_changed" from="MusicOption/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
