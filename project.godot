@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://GlobalScripts/CharacterData.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "MapNode",
 "language": "GDScript",
 "path": "res://GlobalScripts/MapNode.gd"

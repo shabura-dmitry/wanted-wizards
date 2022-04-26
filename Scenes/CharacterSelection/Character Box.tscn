@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/DimasCowboy.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/Fonts/PixelRPG_12.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/Cards/CardTemplate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/CharacterSelection/Character Box.gd" type="Script" id=5]
 
 [node name="Character Box" type="VBoxContainer"]
@@ -12,20 +13,21 @@ alignment = 1
 script = ExtResource( 5 )
 
 [node name="Name" type="Label" parent="."]
-margin_top = 201.0
-margin_right = 128.0
-margin_bottom = 213.0
+margin_top = 103.0
+margin_right = 132.0
+margin_bottom = 115.0
 custom_fonts/font = ExtResource( 2 )
 text = "Gun Slinger"
 align = 1
 
 [node name="CC" type="CenterContainer" parent="."]
-margin_top = 217.0
-margin_right = 128.0
-margin_bottom = 345.0
+margin_top = 119.0
+margin_right = 132.0
+margin_bottom = 247.0
 
 [node name="CharacterSprite" type="TextureRect" parent="CC"]
-margin_right = 128.0
+margin_left = 2.0
+margin_right = 130.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
 size_flags_stretch_ratio = 0.0
@@ -33,11 +35,27 @@ texture = ExtResource( 1 )
 stretch_mode = 6
 
 [node name="CC3" type="CenterContainer" parent="."]
-margin_top = 349.0
-margin_right = 128.0
-margin_bottom = 349.0
+margin_top = 251.0
+margin_right = 132.0
+margin_bottom = 447.0
 
 [node name="StarterDeck" type="GridContainer" parent="CC3"]
-margin_left = 64.0
-margin_right = 64.0
+margin_right = 132.0
+margin_bottom = 196.0
 columns = 2
+
+[node name="CardTemplate" parent="CC3/StarterDeck" instance=ExtResource( 3 )]
+
+[node name="CardTemplate2" parent="CC3/StarterDeck" instance=ExtResource( 3 )]
+margin_left = 68.0
+margin_right = 132.0
+
+[node name="CardTemplate3" parent="CC3/StarterDeck" instance=ExtResource( 3 )]
+margin_top = 100.0
+margin_bottom = 196.0
+
+[node name="CardTemplate4" parent="CC3/StarterDeck" instance=ExtResource( 3 )]
+margin_left = 68.0
+margin_top = 100.0
+margin_right = 132.0
+margin_bottom = 196.0
