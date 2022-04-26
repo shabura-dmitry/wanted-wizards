@@ -8,11 +8,12 @@ func get_slinger():
 	slinger.add_to_deck(CardManager.generate_card(CardManager.Cards.BasicShot))
 	
 	slinger.set_max_health(10)
-	slinger.set_max_armor(0)
-	slinger.set_max_mana(0)
+	slinger.set_health(10)
+	#slinger.set_max_armor(0)
+	#slinger.set_max_mana(0)
 	
-	slinger.set_default_party_pos(3)
-	slinger.set_current_party_pos(3)
+	slinger.set_default_party_pos(1)
+	slinger.set_current_party_pos(1)
 	
 	slinger.set_sprite("res://Assets/DimasCowboy.png")
 	return slinger

@@ -2,8 +2,8 @@ extends Reference
 class_name CharacterData
 
 var max_trinkets = 2
-var default_party_pos = 3 setget set_default_party_pos,get_default_party_pos
-var current_party_pos = 3 setget set_current_party_pos,get_current_party_pos
+var default_party_pos = 1 setget set_default_party_pos,get_default_party_pos
+var current_party_pos = 1 setget set_current_party_pos,get_current_party_pos
 var character_name setget set_character_name,get_character_name
 #var base_damage:int setget set_base_damage,get_base_damage
 var max_health:int setget set_max_health, get_max_health

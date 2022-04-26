@@ -10,5 +10,5 @@ func generate_card(card):
 			return CardBase.new("Basic Shot",
 			 "Target Enemy",
 			"res://Assets/Cards/Card_Pictures/9mm_basic_shot.png",
-			1)
+			5)
 

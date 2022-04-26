@@ -23,5 +23,11 @@ func update():
 
 
 func _on_CharacterSprite_pressed():
-	SavingLoading.game_data["party"] = [character_data]
+	var extra = CharacterPresets.get_slinger()
+	extra.set_default_party_pos(2)
+	extra.set_current_party_pos(2)
+	var extra2 = CharacterPresets.get_slinger()
+	extra2.set_default_party_pos(4)
+	extra2.set_current_party_pos(4)
+	SavingLoading.game_data["party"] = [extra,character_data,extra2]
 	get_tree().get_root().get_node("Game").set_current_scene("res://Scenes/Battle.tscn")

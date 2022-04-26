@@ -41,6 +41,7 @@ texture = ExtResource( 3 )
 expand = true
 
 [node name="HB" type="HBoxContainer" parent="."]
+visible = false
 margin_top = 130.0
 margin_right = 96.0
 margin_bottom = 162.0
