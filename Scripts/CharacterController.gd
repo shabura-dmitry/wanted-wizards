@@ -32,7 +32,10 @@ func play_card():
 	var deck = character_data.get_deck()
 	var random_card = deck[randi() % deck.size()]
 	last_played_card = random_card
-	target.take_damage(last_played_card.get_damage())
+	if last_played_card.get_card_type() == CardManager.CardTypes.Attack:
+		target.take_damage(last_played_card.get_damage())
+	elif last_played_card.get_card_type() == CardManager.CardTypes.Heal:
+		heal(last_played_card.get_damage())
 	
 func _update(delta):
 	battle_timer.value += delta
@@ -42,12 +45,20 @@ func _update(delta):
 				play_card()
 				battle_timer.value = 0
 				rng.randomize()
-				battle_timer.max_value = rng.randf_range(battle_timer_range.x,battle_timer_range.y)
+				
+				battle_timer.max_value = rng.randf_range(battle_timer_range.x + last_played_card.get_reload_time()
+				,battle_timer_range.y + last_played_card.get_reload_time())
+				
 				var lpc =LPC.instance()
 				last_played_card_holder.add_child(lpc)
-				lpc.show_value(last_played_card.get_card_name(),Vector2(0,-80),2,PI/2)
+				#value,color,travel,duration,spread
+				lpc.show_value(last_played_card, 
+				CardManager.get_type_color(last_played_card.get_card_type()),
+				Vector2(0,-80),
+				2,
+				PI/2)
 				
-				SoundManager.play_se(last_played_card.get_card_sound())
+				AudioManager.play("res://Assets/Sounds/"+last_played_card.get_card_sound()+ ".wav")
 		else:
 			pass
 	
@@ -57,9 +68,7 @@ func _update(delta):
 	
 func take_damage(val:int)->void:
 	character_data.set_health(character_data.get_health()-val)
-	update()
 
 func heal(val:int)->void:
 	character_data.set_health(character_data.get_health()+val)
-	update()
 

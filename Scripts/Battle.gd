@@ -14,6 +14,7 @@ var party_q = []
 func _ready():
 	e_killed =0
 	p_lost = 0
+	bounty = 1
 	quota.value =0
 	quota.max_value = zone.quota
 	spawn_characters()
@@ -28,6 +29,7 @@ func spawn_characters():
 		p_scene.character_data = party[p]
 		party_q.append(p_scene)
 		get_node("Fight/PlayerChars").add_child(p_scene)
+
 		
 
 
@@ -49,6 +51,7 @@ func spawn_enemy():
 		get_node("Fight/EnemyChars").add_child(e)
 	
 func _process(delta):
+	bounty_label.text = "Bounty:   $" + str(bounty)
 	if party_q.size() >0:
 		if party_q[party_q.size()-1].character_data.is_dead():
 			
@@ -70,6 +73,7 @@ func _process(delta):
 			get_node("Fight/EnemyChars").get_child(0).free()
 			e_killed+=1
 			quota.value = e_killed
+			bounty *= 1.1
 			
 			if enemy_q.size()>0:
 				for p in party_q:

@@ -20,11 +20,6 @@ _global_script_classes=[ {
 "path": "res://GlobalScripts/MapNode.gd"
 }, {
 "base": "Reference",
-"class": "SoundManagerModule",
-"language": "GDScript",
-"path": "res://Addons/sound_manager/module/internal_scripts/SoundManager_config.gd"
-}, {
-"base": "Reference",
 "class": "Trinket",
 "language": "GDScript",
 "path": "res://GlobalScripts/Trinket.gd"
@@ -32,7 +27,6 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "CharacterData": "",
 "MapNode": "",
-"SoundManagerModule": "",
 "Trinket": ""
 }
 
@@ -49,6 +43,7 @@ MapGeneration="*res://GlobalScripts/MapGeneration.gd"
 CardManager="*res://GlobalScripts/CardManager.gd"
 CharacterPresets="*res://GlobalScripts/CharacterPresets.gd"
 SoundManager="*res://addons/sound_manager/module/SoundManager.tscn"
+AudioManager="*res://GlobalScripts/AudioManager.gd"
 
 [display]
 

@@ -38,10 +38,12 @@ size_flags_vertical = 3
 custom_constants/separation = 180
 alignment = 1
 
-[node name="PlayerChars" type="HBoxContainer" parent="Fight"]
-margin_bottom = 600.0
-size_flags_horizontal = 3
-custom_constants/separation = 0
+[node name="PlayerChars" type="GridContainer" parent="Fight"]
+margin_top = 300.0
+margin_bottom = 300.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 4
 
 [node name="EnemyChars" type="HBoxContainer" parent="Fight"]
 margin_left = 180.0

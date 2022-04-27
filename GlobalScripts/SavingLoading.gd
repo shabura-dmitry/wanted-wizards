@@ -2,7 +2,7 @@ extends Node
 #the filepath of the save file
 var game_path = "res://game.save"
 var game_data = {"party":[]}
-var zone_data = {0:{"bounty":1,"waves":2, "quota":2}}
+var zone_data = {0:{"bounty":1,"waves":1, "quota":20}}
 var settings ={"music_volume":100, "sound_volume":100}
 
 		

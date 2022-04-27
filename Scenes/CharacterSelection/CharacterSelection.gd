@@ -9,3 +9,8 @@ func _ready():
 	slinger_box.character_data = CharacterPresets.get_slinger()
 	character_slots.add_child(slinger_box)
 	
+	var knight_box = character_box.instance()
+	knight_box.character_data = CharacterPresets.get_knight()
+	character_slots.add_child(knight_box)
+	
+	
