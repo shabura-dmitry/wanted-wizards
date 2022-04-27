@@ -1,6 +1,6 @@
 extends Control
 var battle_end = load("res://Scenes/BattleEnd.tscn")
-onready var zone = SavingLoading.zone_data[0]
+onready var zone = SavingLoading.zone_data[SavingLoading.zone_data["current_zone"]]
 onready var party = SavingLoading.game_data["party"]
 onready var quota = get_node("QuotaBar")
 onready var bounty_label = get_node("Bounty")

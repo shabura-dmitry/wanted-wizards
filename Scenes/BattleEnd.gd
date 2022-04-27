@@ -16,4 +16,9 @@ func _ready():
 
 
 func _on_Back_pressed():
-	get_tree().get_root().get_node("Game").set_current_scene("res://Scenes/MainMenu/MenuContainer.tscn")
+	if SavingLoading.zone_data.has(SavingLoading.zone_data["current_zone"] +1):
+		SavingLoading.zone_data["current_zone"] = SavingLoading.zone_data["current_zone"] +1
+		get_tree().get_root().get_node("Game").set_current_scene("res://Scenes/Battle.tscn")
+		
+	else:
+		print("You Won!!!!")
