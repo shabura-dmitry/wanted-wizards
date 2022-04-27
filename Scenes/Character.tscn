@@ -1,8 +1,30 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/UI/Fonts/PixelRPG_12.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/DimasCowboy.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/CharacterController.gd" type="Script" id=5]
+
+[sub_resource type="Shader" id=9]
+code = "shader_type canvas_item;
+
+uniform bool active = false;
+uniform vec3 color = vec3(1.0,1.0,1.0);
+
+void fragment() {
+	vec4 previous_color = texture(TEXTURE, UV);
+	vec4 white_color = vec4(1.0, 1.0, 1.0, previous_color.a);
+	vec4 new_color = previous_color;
+	if (active == true)
+	{
+		new_color = vec4(color.r,color.g,color.b,previous_color.a)
+	}
+	COLOR = new_color;
+}"
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = SubResource( 9 )
+shader_param/active = false
+shader_param/color = Vector3( 1, 1, 0 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 0, 0, 1 )
@@ -15,6 +37,25 @@ bg_color = Color( 0.94902, 0.654902, 0.152941, 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.968627, 0.968627, 0.968627, 0 )
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+
+[sub_resource type="Animation" id=8]
+resource_name = "hitflash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Character Sprite:material:shader_param/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
 
 [node name="VB" type="VBoxContainer"]
 margin_right = 96.0
@@ -41,6 +82,7 @@ align = 1
 valign = 1
 
 [node name="Character Sprite" type="TextureRect" parent="."]
+material = SubResource( 10 )
 margin_top = 20.0
 margin_right = 96.0
 margin_bottom = 116.0
@@ -68,3 +110,7 @@ custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 4 )
 max_value = 10.0
 value = 5.0
+
+[node name="Effects" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 7 )
+anims/hitflash = SubResource( 8 )

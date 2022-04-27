@@ -14,7 +14,9 @@ var last_played_card = CardManager.generate_card(CardManager.Cards.BasicSpell)
 
 
 func _ready():
-	#last_played_card = CardManager.generate_card(true,null)
+	var unique_mat = $"Character Sprite".material.duplicate()
+	$"Character Sprite".material = unique_mat
+	
 	sprite.texture = load(character_data.get_sprite())
 	health.max_value = character_data.get_max_health()
 	health.min_value = 0
@@ -33,8 +35,19 @@ func play_card():
 	var random_card = deck[randi() % deck.size()]
 	last_played_card = random_card
 	if last_played_card.get_card_type() == CardManager.CardTypes.Attack:
+		var color = CardManager.get_type_color(CardManager.CardTypes.Attack)
+		var color_to_vec3 = Vector3(color.r,color.g,color.b)
+		
+		target.get_node("Character Sprite").material.set_shader_param("color",color_to_vec3)
+		target.get_node("Effects").play("hitflash")
+	
 		target.take_damage(last_played_card.get_damage())
 	elif last_played_card.get_card_type() == CardManager.CardTypes.Heal:
+		var color = CardManager.get_type_color(CardManager.CardTypes.Heal)
+		var color_to_vec3 = Vector3(color.r,color.g,color.b)
+		
+		get_node("Character Sprite").material.set_shader_param("color",color_to_vec3)
+		get_node("Effects").play("hitflash")
 		heal(last_played_card.get_damage())
 	
 func _update(delta):
