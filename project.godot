@@ -14,10 +14,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://GlobalScripts/CharacterData.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "MapNode",
 "language": "GDScript",
 "path": "res://GlobalScripts/MapNode.gd"
+}, {
+"base": "Reference",
+"class": "SoundManagerModule",
+"language": "GDScript",
+"path": "res://Addons/sound_manager/module/internal_scripts/SoundManager_config.gd"
 }, {
 "base": "Reference",
 "class": "Trinket",
@@ -27,6 +32,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "CharacterData": "",
 "MapNode": "",
+"SoundManagerModule": "",
 "Trinket": ""
 }
 
@@ -42,11 +48,16 @@ SavingLoading="*res://GlobalScripts/SavingLoading.gd"
 MapGeneration="*res://GlobalScripts/MapGeneration.gd"
 CardManager="*res://GlobalScripts/CardManager.gd"
 CharacterPresets="*res://GlobalScripts/CharacterPresets.gd"
+SoundManager="*res://addons/sound_manager/module/SoundManager.tscn"
 
 [display]
 
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/sound_manager/plugin.cfg" )
 
 [importer_defaults]
 
