@@ -4,16 +4,20 @@ onready var character_data:CharacterData
 var target
 onready var battle_timer = get_node("BattleTimer")
 onready var battle_timer_range = character_data.get_battle_timer_range()
-onready var char_name = get_node("Name")
+onready var char_name = get_node("Health/Name")
 onready var health = get_node("Health")
 onready var sprite = get_node("Character Sprite")
 onready var rng = RandomNumberGenerator.new()
 var LPC = load("res://Scenes/LastPlayedCard.tscn")
 onready var last_played_card_holder = get_node("Control/LPC")
-var last_played_card = CardManager.generate_card(CardManager.Cards.BasicSpell)
+var last_played_card
 
 
 func _ready():
+	if character_data.is_enemy():
+		last_played_card = CardManager.generate_card(CardManager.Spells.BasicSpell)
+	else:
+		last_played_card = CardManager.generate_card(CardManager.Cards.BasicShot)
 	var unique_mat = $"Character Sprite".material.duplicate()
 	$"Character Sprite".material = unique_mat
 	

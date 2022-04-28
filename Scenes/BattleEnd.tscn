@@ -7,6 +7,7 @@
 
 [sub_resource type="DynamicFont" id=3]
 size = 48
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer"]
@@ -41,39 +42,15 @@ align = 1
 margin_top = 159.0
 margin_right = 1024.0
 margin_bottom = 208.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
 custom_fonts/font = SubResource( 3 )
 text = "Zone Completed"
 align = 1
 
-[node name="Killed" type="Label" parent="."]
-margin_top = 212.0
-margin_right = 1024.0
-margin_bottom = 261.0
-custom_colors/font_color = Color( 0, 1, 0.858824, 1 )
-custom_fonts/font = SubResource( 3 )
-text = "Enemies Killed:"
-align = 1
-
-[node name="Gold" type="Label" parent="."]
-margin_top = 265.0
-margin_right = 1024.0
-margin_bottom = 314.0
-custom_colors/font_color = Color( 1, 0.937255, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-text = "Gold Found:"
-align = 1
-
-[node name="Lost" type="Label" parent="."]
-margin_top = 318.0
-margin_right = 1024.0
-margin_bottom = 367.0
-custom_colors/font_color = Color( 1, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-text = "Partners Lost:"
-align = 1
-
 [node name="Back" type="TextureButton" parent="."]
-margin_top = 371.0
+margin_top = 212.0
 margin_right = 1024.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 1024, 229 )

@@ -1,0 +1,216 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Timer.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Town.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/BattleController.gd" type="Script" id=3]
+[ext_resource path="res://Assets/UI/Fonts/PixelRPG.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Pointer.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 36
+outline_size = 3
+outline_color = Color( 0.570313, 0.278508, 0.1203, 0.839216 )
+extra_spacing_char = -1
+extra_spacing_space = -6
+font_data = ExtResource( 4 )
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 12, 64, 0, 0, 0, 0, 429, 64 )
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = -1
+extra_spacing_space = -6
+font_data = ExtResource( 4 )
+
+[node name="BattleScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="BackGround" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1024, 600 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Zone Name" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 59.0
+margin_bottom = 124.0
+custom_colors/font_color = Color( 1, 0.819608, 0, 0.839216 )
+custom_fonts/font = SubResource( 1 )
+text = "Outlaw Town"
+align = 1
+valign = 1
+
+[node name="ZoneProgress" type="TextureProgress" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -230.0
+margin_right = 230.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 460, 64 )
+texture_under = ExtResource( 1 )
+nine_patch_stretch = true
+
+[node name="ZoneProgIndicator" type="TextureRect" parent="ZoneProgress"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 50.0
+margin_right = -408.0
+margin_bottom = 26.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Path2D" type="Path2D" parent="ZoneProgress"]
+curve = SubResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="ZoneProgress/Path2D"]
+position = Vector2( 12, 64 )
+loop = false
+
+[node name="M" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 334.0
+margin_right = -15.0
+margin_bottom = -15.0
+
+[node name="C" type="Control" parent="M"]
+margin_right = 994.0
+margin_bottom = 251.0
+
+[node name="M" type="MarginContainer" parent="M/C"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -574.0
+
+[node name="Party" type="Control" parent="M/C/M"]
+margin_right = 420.0
+margin_bottom = 251.0
+
+[node name="C1" type="Control" parent="M/C/M/Party"]
+margin_left = 300.0
+margin_right = 396.0
+margin_bottom = 132.0
+
+[node name="C2" type="Control" parent="M/C/M/Party"]
+margin_left = 300.0
+margin_top = 119.0
+margin_right = 396.0
+margin_bottom = 251.0
+
+[node name="C3" type="Control" parent="M/C/M/Party"]
+margin_left = 200.0
+margin_right = 296.0
+margin_bottom = 132.0
+
+[node name="C4" type="Control" parent="M/C/M/Party"]
+margin_left = 200.0
+margin_top = 119.0
+margin_right = 296.0
+margin_bottom = 251.0
+
+[node name="C5" type="Control" parent="M/C/M/Party"]
+margin_left = 100.0
+margin_right = 196.0
+margin_bottom = 132.0
+
+[node name="C6" type="Control" parent="M/C/M/Party"]
+margin_left = 100.0
+margin_top = 119.0
+margin_right = 196.0
+margin_bottom = 251.0
+
+[node name="C7" type="Control" parent="M/C/M/Party"]
+margin_right = 96.0
+margin_bottom = 132.0
+
+[node name="C8" type="Control" parent="M/C/M/Party"]
+margin_top = 119.0
+margin_right = 96.0
+margin_bottom = 251.0
+
+[node name="C2" type="Control" parent="M"]
+margin_right = 994.0
+margin_bottom = 251.0
+
+[node name="M" type="MarginContainer" parent="M/C2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 574.0
+
+[node name="Enemies" type="Control" parent="M/C2/M"]
+margin_right = 420.0
+margin_bottom = 251.0
+
+[node name="E1" type="Control" parent="M/C2/M/Enemies"]
+margin_right = 96.0
+margin_bottom = 132.0
+
+[node name="E2" type="Control" parent="M/C2/M/Enemies"]
+margin_top = 122.0
+margin_right = 96.0
+margin_bottom = 254.0
+
+[node name="E3" type="Control" parent="M/C2/M/Enemies"]
+margin_left = 100.0
+margin_right = 196.0
+margin_bottom = 132.0
+
+[node name="E4" type="Control" parent="M/C2/M/Enemies"]
+margin_left = 100.0
+margin_top = 122.0
+margin_right = 196.0
+margin_bottom = 254.0
+
+[node name="E5" type="Control" parent="M/C2/M/Enemies"]
+margin_left = 200.0
+margin_right = 296.0
+margin_bottom = 132.0
+
+[node name="E6" type="Control" parent="M/C2/M/Enemies"]
+margin_left = 200.0
+margin_top = 122.0
+margin_right = 296.0
+margin_bottom = 254.0
+
+[node name="E7" type="Control" parent="M/C2/M/Enemies"]
+margin_left = 300.0
+margin_right = 396.0
+margin_bottom = 132.0
+
+[node name="E8" type="Control" parent="M/C2/M/Enemies"]
+margin_left = 300.0
+margin_top = 122.0
+margin_right = 396.0
+margin_bottom = 254.0
+
+[node name="Button" type="Button" parent="."]
+margin_left = 363.0
+margin_top = 188.0
+margin_right = 565.0
+margin_bottom = 208.0
+text = "next zone"
+
+[node name="Shopplaceholder" type="Label" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 18.0
+margin_top = 306.0
+margin_right = 18.0
+margin_bottom = -233.0
+custom_colors/font_color = Color( 1, 0.980392, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "SHOP GOES HERE!!!!!!!!"
+align = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

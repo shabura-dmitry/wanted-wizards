@@ -1,6 +1,6 @@
 extends Reference
 class_name CharacterData
-
+var is_enemy = false
 var default_party_pos = 1 setget set_default_party_pos,get_default_party_pos
 var current_party_pos = 1 setget set_current_party_pos,get_current_party_pos
 var character_name setget set_character_name,get_character_name
@@ -9,9 +9,20 @@ var health:int setget set_health,get_health
 var character_sprite:String setget set_sprite,get_sprite
 var deck = [] setget set_deck,get_deck
 var battle_timer_range = Vector2(2,5) setget set_battle_timer_range,get_battle_timer_range
+var bounty:int = 0 setget set_bounty,get_bounty
 
 func _init(name:String):
 	character_name = name	
+	
+func set_is_enemy(val:bool)->void:
+	is_enemy = val
+func is_enemy()->bool:
+	return is_enemy
+func set_bounty(val:int)->void:
+	bounty = val
+func get_bounty()->int:
+	return bounty
+	
 	
 func set_battle_timer_range(_range:Vector2)->void:
 	battle_timer_range = _range

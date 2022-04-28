@@ -9,9 +9,7 @@ func _ready():
 		get_node("ZoneStatus").text = "Zone Lost :("
 	else:
 		get_node("ZoneStatus").text = "Zone Cleared!!"
-	get_node("Killed").text = "Enemies Killed:"+str(killed)
-	get_node("Gold").text = "Gold Found:" + str(gold)
-	get_node("Lost").text = "Partners Lost:" + str(lost)
+
 
 
 

@@ -9,25 +9,31 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "BattleZone",
+"language": "GDScript",
+"path": "res://Scripts/BattleZone.gd"
+}, {
 "base": "Reference",
 "class": "CharacterData",
 "language": "GDScript",
 "path": "res://GlobalScripts/CharacterData.gd"
 }, {
-"base": "Reference",
-"class": "MapNode",
+"base": "Control",
+"class": "ShopZone",
 "language": "GDScript",
-"path": "res://GlobalScripts/MapNode.gd"
+"path": "res://Scenes/ShopZone.gd"
 }, {
-"base": "Reference",
-"class": "Trinket",
+"base": "Node",
+"class": "SpellBase",
 "language": "GDScript",
-"path": "res://GlobalScripts/Trinket.gd"
+"path": "res://Scripts/SpellBase.gd"
 } ]
 _global_script_class_icons={
+"BattleZone": "",
 "CharacterData": "",
-"MapNode": "",
-"Trinket": ""
+"ShopZone": "",
+"SpellBase": ""
 }
 
 [application]
@@ -44,6 +50,7 @@ CardManager="*res://GlobalScripts/CardManager.gd"
 CharacterPresets="*res://GlobalScripts/CharacterPresets.gd"
 SoundManager="*res://addons/sound_manager/module/SoundManager.tscn"
 AudioManager="*res://GlobalScripts/AudioManager.gd"
+ZoneManager="*res://GlobalScripts/ZoneManager.gd"
 
 [display]
 

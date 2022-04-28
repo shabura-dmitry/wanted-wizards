@@ -24,4 +24,4 @@ func update():
 
 func _on_CharacterSprite_pressed():
 	SavingLoading.game_data["party"] = [character_data]
-	get_tree().get_root().get_node("Game").set_current_scene("res://Scenes/Battle.tscn")
+	get_tree().get_root().get_node("Game").set_current_scene("res://Scenes/BattleScene.tscn")

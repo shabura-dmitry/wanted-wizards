@@ -1,0 +1,131 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/ShopZone.gd" type="Script" id=1]
+[ext_resource path="res://Assets/UI/Fonts/PixelRPG.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scenes/Cards/CardTemplate.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Shader" id=4]
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 4 )
+
+[sub_resource type="Shader" id=8]
+code = "shader_type canvas_item;
+uniform float height = 2.0;
+uniform float speed = 3.0;
+uniform float frequency = 25.0;
+void vertex(){
+	VERTEX.y +=  height * sin((frequency * UV.x) +(speed * TIME));
+}"
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = SubResource( 8 )
+shader_param/height = 2.0
+shader_param/speed = 3.0
+shader_param/frequency = 25.0
+
+[sub_resource type="DynamicFont" id=3]
+size = 48
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = -1
+extra_spacing_space = -6
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 24
+extra_spacing_char = -1
+extra_spacing_space = -6
+font_data = ExtResource( 2 )
+
+[node name="ShopZone" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="New Cards" type="GridContainer" parent="Panel"]
+material = SubResource( 5 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -111.0
+margin_top = -73.0
+margin_right = 111.0
+margin_bottom = 23.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 15
+columns = 3
+
+[node name="Upgrade Cards" type="GridContainer" parent="Panel"]
+material = SubResource( 5 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -111.0
+margin_top = 71.0
+margin_right = 111.0
+margin_bottom = 167.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 15
+columns = 3
+
+[node name="CardTemplate" parent="Panel/Upgrade Cards" instance=ExtResource( 3 )]
+
+[node name="CardTemplate2" parent="Panel/Upgrade Cards" instance=ExtResource( 3 )]
+margin_left = 79.0
+margin_right = 143.0
+
+[node name="CardTemplate3" parent="Panel/Upgrade Cards" instance=ExtResource( 3 )]
+margin_left = 158.0
+margin_right = 222.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -211.5
+margin_top = -200.0
+margin_right = 211.5
+margin_bottom = -151.0
+
+[node name="Label" type="Label" parent="Panel/CenterContainer"]
+material = SubResource( 9 )
+margin_left = 70.0
+margin_right = 352.0
+margin_bottom = 49.0
+custom_colors/font_color = Color( 0.615686, 1, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 7
+custom_constants/shadow_offset_y = 4
+custom_fonts/font = SubResource( 3 )
+text = "SHOP ZONE"
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -106.5
+margin_top = -102.5
+margin_right = 106.5
+margin_bottom = -77.5
+custom_fonts/font = SubResource( 10 )
+text = "BUY A NEW CARD"
+
+[node name="Label2" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -106.5
+margin_top = 38.5
+margin_right = 106.5
+margin_bottom = 63.5
+custom_fonts/font = SubResource( 10 )
+text = "UPGRADE A CARD"
