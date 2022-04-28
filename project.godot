@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://GlobalScripts/CharacterData.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "MapNode",
 "language": "GDScript",
 "path": "res://GlobalScripts/MapNode.gd"
@@ -52,7 +52,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/sound_manager/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [importer_defaults]
 
