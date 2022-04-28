@@ -50,7 +50,6 @@ CardManager="*res://GlobalScripts/CardManager.gd"
 CharacterPresets="*res://GlobalScripts/CharacterPresets.gd"
 SoundManager="*res://addons/sound_manager/module/SoundManager.tscn"
 AudioManager="*res://GlobalScripts/AudioManager.gd"
-ZoneManager="*res://GlobalScripts/ZoneManager.gd"
 
 [display]
 
