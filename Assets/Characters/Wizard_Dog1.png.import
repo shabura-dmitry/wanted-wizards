@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CharacterPlaceholder.png-a3905ae5b18505ae19705970ac04e590.stex"
+path="res://.import/Wizard_Dog1.png-30c7f8f4ddfdb07251bf94530737f69f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CharacterPlaceholder.png"
-dest_files=[ "res://.import/CharacterPlaceholder.png-a3905ae5b18505ae19705970ac04e590.stex" ]
+source_file="res://Assets/Characters/Wizard_Dog1.png"
+dest_files=[ "res://.import/Wizard_Dog1.png-30c7f8f4ddfdb07251bf94530737f69f.stex" ]
 
 [params]
 

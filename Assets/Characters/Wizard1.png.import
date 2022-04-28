@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cowboy1.png-926e0bf8c724e223fb9376dea41c8dc3.stex"
+path="res://.import/Wizard1.png-87e4d97f5ccb39701cd439f19afb2a86.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cowboy1.png"
-dest_files=[ "res://.import/Cowboy1.png-926e0bf8c724e223fb9376dea41c8dc3.stex" ]
+source_file="res://Assets/Characters/Wizard1.png"
+dest_files=[ "res://.import/Wizard1.png-87e4d97f5ccb39701cd439f19afb2a86.stex" ]
 
 [params]
 

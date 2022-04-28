@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cylinder.png-ca909d6d714db09b475dc7ba19bef04e.stex"
+path="res://.import/Mushroom_Wizard2.png-5a2e6c3a25bd0e780fe99c9ae6de607d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cylinder.png"
-dest_files=[ "res://.import/Cylinder.png-ca909d6d714db09b475dc7ba19bef04e.stex" ]
+source_file="res://Assets/Characters/Mushroom_Wizard2.png"
+dest_files=[ "res://.import/Mushroom_Wizard2.png-5a2e6c3a25bd0e780fe99c9ae6de607d.stex" ]
 
 [params]
 
