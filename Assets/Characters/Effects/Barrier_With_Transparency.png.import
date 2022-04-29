@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Barrier_With_Transparency.png-60f68fb5438ffee647eb11dc7ac98935.stex"
+path="res://.import/Barrier_With_Transparency.png-7d1755e336d65b4839ea2f027f5eaea7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Barrier_With_Transparency.png"
-dest_files=[ "res://.import/Barrier_With_Transparency.png-60f68fb5438ffee647eb11dc7ac98935.stex" ]
+source_file="res://Assets/Characters/Effects/Barrier_With_Transparency.png"
+dest_files=[ "res://.import/Barrier_With_Transparency.png-7d1755e336d65b4839ea2f027f5eaea7.stex" ]
 
 [params]
 
