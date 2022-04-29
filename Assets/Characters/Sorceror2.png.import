@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DimasKnight.png-10d8a5adb934de02e273ee3b3114e1a0.stex"
+path="res://.import/Sorceror2.png-2b327fb49c93de3eba1b6167e79f8303.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/DimasKnight.png"
-dest_files=[ "res://.import/DimasKnight.png-10d8a5adb934de02e273ee3b3114e1a0.stex" ]
+source_file="res://Assets/Characters/Sorceror2.png"
+dest_files=[ "res://.import/Sorceror2.png-2b327fb49c93de3eba1b6167e79f8303.stex" ]
 
 [params]
 
