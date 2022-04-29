@@ -60,7 +60,7 @@ func get_knight():
 	knight.set_current_party_pos(1)
 	knight.set_battle_timer_range(Vector2(1.5,2.5))
 	
-	knight.set_sprite("res://Assets/DimasKnight.png")
+	knight.set_sprite("res://Assets/Characters/Knight1.png")
 	return knight
 	
 	

@@ -34,14 +34,18 @@ script = ExtResource( 3 )
 [node name="BackGround" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_min_size = Vector2( 1024, 600 )
+margin_right = -960.0
+margin_bottom = -540.0
+rect_min_size = Vector2( 960, 540 )
 texture = ExtResource( 2 )
 expand = true
 
 [node name="Zone Name" type="Label" parent="."]
 anchor_right = 1.0
-margin_top = 59.0
-margin_bottom = 124.0
+margin_left = -24.0
+margin_top = 132.0
+margin_right = -24.0
+margin_bottom = 197.0
 custom_colors/font_color = Color( 1, 0.819608, 0, 0.839216 )
 custom_fonts/font = SubResource( 1 )
 text = "Outlaw Town"
@@ -51,8 +55,8 @@ valign = 1
 [node name="ZoneProgress" type="TextureProgress" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -230.0
-margin_right = 230.0
+margin_left = -228.0
+margin_right = 232.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 460, 64 )
 texture_under = ExtResource( 1 )

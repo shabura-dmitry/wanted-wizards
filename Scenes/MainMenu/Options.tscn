@@ -53,7 +53,7 @@ text = "Music Volume:"
 [node name="Back" type="TextureButton" parent="."]
 margin_top = 40.0
 margin_right = 272.0
-margin_bottom = 600.0
+margin_bottom = 540.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource( 3 )
