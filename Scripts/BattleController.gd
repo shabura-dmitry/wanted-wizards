@@ -1,10 +1,10 @@
 extends Control
 const max_zones = 10
-var zone_q =[]
+var zone_q =SavingLoading.zone_data["zone_q"]
 onready var zone_prog_bar = get_node("ZoneProgress")
 onready var zone_prog_path_pos = get_node("ZoneProgress/Path2D/PathFollow2D")
 onready var zone_prog_indicator = get_node("ZoneProgress/ZoneProgIndicator")
-onready var zone_prog =-1
+onready var zone_prog = SavingLoading.zone_data["zone_prog"]
 
 onready var party_container = get_node("M/C/M/Party")
 onready var party_slots = party_container.get_children()
@@ -15,21 +15,24 @@ onready var enemy_container = get_node("M/C2/M/Enemies")
 onready var enemy_slots = enemy_container.get_children()
 
 func _ready():
+	print(zone_prog)
 	spawn_party()
-	zone_prog_path_pos.offset = zone_prog
+	zone_prog_path_pos.offset = 44 * zone_prog
 	zone_prog_indicator.rect_position = zone_prog_path_pos.position
-	generate_zones()
+	if zone_prog == -1:
+		generate_zones()
 	next_zone()
 
 func generate_zones():
 	zone_q = ZoneManager.get_zones(max_zones)
+	SavingLoading.zone_data["zone_q"] = zone_q
 	
 func next_zone():
-	AudioManager.stop_all()
-	$Shopplaceholder.hide()
+
 	
 	if zone_prog < max_zones-1:
 		zone_prog +=1
+		SavingLoading.zone_data["zone_prog"] = zone_prog
 		zone_prog_path_pos.offset = 44 * zone_prog
 		zone_prog_indicator.rect_position = zone_prog_path_pos.position
 		
@@ -42,12 +45,20 @@ func next_zone():
 			
 			
 		if zone_q[zone_prog].is_class("ShopZone"):
-			for p in party_slots:
-				if p.get_child_count() >0:
-					pass
-					p.get_child(0).set_can_fight(false)
-					p.hide()
-			$Shopplaceholder.show()
+			SavingLoading.zone_data["zone_prog"] = zone_prog
+			get_tree().get_root().get_node("Game").call_deferred("set_current_scene","res://Scenes/ShopZone.tscn")
+			queue_free()
+			#for p in party_slots:
+			#	if p.get_child_count() >0:
+			#		p.get_child(0).set_can_fight(false)
+			#		p.hide()
+			
+			#$ShopZone.show()
+			#$ShopZone.add_child(zone_q[zone_prog].get_shop_scene())
+			#$ShopZone/H/C3.add_child(zone_q[zone_prog].shop_items[0])
+
+			#shop_zone.shop_items = [CardManager.generate_card(CardManager.Cards.SelfShot)]
+		#	add_child(shop_zone)
 
 func spawn_party():
 		## populate party member slots
