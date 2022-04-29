@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Binder Page.png-9b4491e91537162f3bf780d6340c9a97.stex"
+path="res://.import/Lexicon_Page.png-74b0078af8548059010074ab376c0ef0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Binder/Binder Page.png"
-dest_files=[ "res://.import/Binder Page.png-9b4491e91537162f3bf780d6340c9a97.stex" ]
+source_file="res://Assets/UI/Lexicon/Lexicon_Page.png"
+dest_files=[ "res://.import/Lexicon_Page.png-74b0078af8548059010074ab376c0ef0.stex" ]
 
 [params]
 
