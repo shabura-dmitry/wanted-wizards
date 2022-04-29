@@ -19,7 +19,7 @@ func generate_card(card):
 			
 		Cards.BasicShot:
 			return CardBase.new(CardTypes.Attack,"Basic Shot", "res://Assets/Cards/Card_Pictures/9mm_basic_shot.png",
-			"gun_1",5,0,1,1)
+			"gun_1",50,0,1,1)
 			
 		Cards.HeavyShot:
 			return CardBase.new(CardTypes.Attack,"Heavy Shot","res://Assets/Cards/Card_Pictures/9mm_basic_shot.png",
@@ -27,11 +27,11 @@ func generate_card(card):
 			
 		Cards.SelfShot:
 			return CardBase.new(CardTypes.Heal, "Self Shot","res://Assets/Cards/Card_Pictures/9mm_friendly_fire.png",
-			"heal_1",8,.5,3,10)
+			"heal_1",-8,.5,3,10)
 		
 		Cards.ToughLove:
 			return CardBase.new(CardTypes.Heal, "Tough Love","res://Assets/Cards/Card_Pictures/9mm_friendly_fire.png",
-			"heal_1",20,2,3,20)
+			"heal_1",-20,2,3,20)
 		
 			
 		

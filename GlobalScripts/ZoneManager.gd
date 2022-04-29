@@ -7,8 +7,8 @@ func _ready():
 
 func get_zones(num_zones):
 	var zone_q = []
-	zone_q.append(get_battle(ZoneTypes.Battle,8,1))
-	for z in range(1,num_zones):
+	zone_q.append(get_battle(ZoneTypes.Battle,1,1))
+	for _z in range(1,num_zones):
 		var zone_choice = ZoneTypes.keys()[randi() % ZoneTypes.keys().size()]
 		zone_choice = ZoneTypes[zone_choice]
 		#print(zone_choice)
@@ -27,7 +27,7 @@ func get_zones(num_zones):
 func get_shop(card_num,card_rarity, cost_mult):
 	var shop = ShopZone.new()
 	var cards = []
-	for n in range(0,card_num):
+	for _n in range(0,card_num):
 		var card_choice = CardManager.Cards.keys()[randi() % CardManager.Cards.keys().size()]
 		var card = CardManager.generate_card(CardManager.Cards[card_choice])
 		while card.get_card_rarity() != card_rarity:
@@ -64,7 +64,7 @@ func get_possible_enemies(zone_type, battle_type)->Array:
 			match battle_type:
 				BattleTypes.Magic:
 					return [CharacterPresets.EnemyList.WizardDog,
-							CharacterPresets.EnemyList.Wizard]
+							CharacterPresets.EnemyList.WizardMushroom]
 
 		ZoneTypes.Boss:
 			match battle_type:

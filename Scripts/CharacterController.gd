@@ -1,7 +1,7 @@
 extends Control
 
 onready var character_data:CharacterData
-var target
+var deck
 onready var battle_timer = get_node("BattleTimer")
 onready var battle_timer_range = character_data.get_battle_timer_range()
 onready var char_name = get_node("Health/Name")
@@ -10,82 +10,98 @@ onready var sprite = get_node("Character Sprite")
 onready var rng = RandomNumberGenerator.new()
 var LPC = load("res://Scenes/LastPlayedCard.tscn")
 onready var last_played_card_holder = get_node("Control/LPC")
+onready var unique_mat = $"Character Sprite".material.duplicate()
 var last_played_card
+var can_fight
+
+
+
+signal card_played
 
 
 func _ready():
-	if character_data.is_enemy():
-		last_played_card = CardManager.generate_card(CardManager.Spells.BasicSpell)
-	else:
-		last_played_card = CardManager.generate_card(CardManager.Cards.BasicShot)
-	var unique_mat = $"Character Sprite".material.duplicate()
-	$"Character Sprite".material = unique_mat
-	
-	sprite.texture = load(character_data.get_sprite())
-	health.max_value = character_data.get_max_health()
-	health.min_value = 0
-	
-	battle_timer.max_value = character_data.get_battle_timer_range().y
-	battle_timer.min_value= 0
-	
-	battle_timer.value=  0
-	
+	init_character()
+
+
+
 func _process(delta):
-	#battle_timer.value += delta
 	_update(delta)
+	update_appearance()
 	
-func play_card():
-	var deck = character_data.get_deck()
-	var random_card = deck[randi() % deck.size()]
-	last_played_card = random_card
-	if last_played_card.get_card_type() == CardManager.CardTypes.Attack:
-		var color = CardManager.get_type_color(CardManager.CardTypes.Attack)
-		var color_to_vec3 = Vector3(color.r,color.g,color.b)
-		
-		target.get_node("Character Sprite").material.set_shader_param("color",color_to_vec3)
-		target.get_node("Effects").play("hitflash")
 	
-		target.take_damage(last_played_card.get_damage())
-	elif last_played_card.get_card_type() == CardManager.CardTypes.Heal:
-		var color = CardManager.get_type_color(CardManager.CardTypes.Heal)
-		var color_to_vec3 = Vector3(color.r,color.g,color.b)
-		
-		get_node("Character Sprite").material.set_shader_param("color",color_to_vec3)
-		get_node("Effects").play("hitflash")
-		heal(last_played_card.get_damage())
 	
 func _update(delta):
 	battle_timer.value += delta
 	if battle_timer.value >= battle_timer.max_value:
-		if target != null:
-			if !target.character_data.is_dead():
-				play_card()
-				battle_timer.value = 0
-				rng.randomize()
+		battle_timer.value = 0
+		var data = {"origin":self,"target":null, "card_played":null}
+		set_card_played(data)
+		set_target(data)
+		emit_signal("card_played", data)
+
 				
-				battle_timer.max_value = rng.randf_range(battle_timer_range.x + last_played_card.get_reload_time()
-				,battle_timer_range.y + last_played_card.get_reload_time())
-				
-				var lpc =LPC.instance()
-				last_played_card_holder.add_child(lpc)
-				#value,color,travel,duration,spread
-				lpc.show_value(last_played_card, 
-				CardManager.get_type_color(last_played_card.get_card_type()),
-				Vector2(0,-80),
-				2,
-				PI/2)
-				
-				AudioManager.play("res://Assets/Sounds/"+last_played_card.get_card_sound()+ ".wav")
-		else:
-			pass
+
+func set_target(data):
+	if data["card_played"].get_card_type() == CardManager.CardTypes.Heal:
+		data["target"] = "self"
+	elif character_data.get_is_enemy():
+		data["target"] = "character"
+	else:
+		data["target"] = "enemy"
+		
+		
+func set_card_played(data):
+	data["card_played"] = get_random_card()
 	
+func play_card_effect():
+	var lpc =LPC.instance()
+	last_played_card_holder.add_child(lpc)
+	#value,color,travel,duration,spread
+	lpc.show_value(last_played_card, 
+	CardManager.get_type_color(last_played_card.get_card_type()),
+	Vector2(0,-80),
+	2,
+	PI/2)
+	
+func take_damage(damage):
+	character_data.set_health(character_data.get_health() - damage)
+
+
+func play_hit_effect(card_type):
+	var color = get_effect_color(card_type)
+	get_node("Character Sprite").material.set_shader_param("color",color)
+	get_node("Effects").play("hitflash")
+	
+func set_can_fight(status):
+	can_fight = status
+
+func get_random_card():
+	var random_card = deck[randi() % deck.size()]
+	last_played_card = random_card
+	return last_played_card
+
+func get_effect_color(type):
+	var color = CardManager.get_type_color(type)
+	var c_to_3 = Vector3(color.r,color.g,color.b)
+	return c_to_3
+
+func update_appearance():
 	char_name.text = character_data.get_character_name()
 	health.value = character_data.get_health()
 
+func init_character():
+	can_fight = false
+	last_played_card = CardManager.generate_card(CardManager.Cards.BasicShot)
+	$"Character Sprite".material = unique_mat
+	sprite.texture = load(character_data.get_sprite())
+	health.max_value = character_data.get_max_health()
+	health.min_value = 0
 	
-func take_damage(val:int)->void:
-	character_data.set_health(character_data.get_health()-val)
-
-func heal(val:int)->void:
-	character_data.set_health(character_data.get_health()+val)
-
+	char_name.text = character_data.get_character_name()
+	health.value = character_data.get_health()
+	
+	battle_timer.max_value = character_data.get_battle_timer_range().y
+	battle_timer.min_value = 0
+	battle_timer.value = 0
+	
+	deck = character_data.get_deck()

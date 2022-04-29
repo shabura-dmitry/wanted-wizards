@@ -20,17 +20,17 @@ func _init(_type, _spell_name, _spell_picture,_spell_sound,_damage, _reload):
 
 	pass
 
-func get_spell_picture()->String:
+func get_card_picture()->String:
 	return spell_picture
-func get_spell_desc()->String:
+func get_card_desc()->String:
 	return spell_desc
-func get_spell_name()->String:
+func get_card_name()->String:
 	return spell_name
 func get_damage():
 	return damage
-func get_spell_sound():
+func get_card_sound():
 	return spell_sound
 func get_reload_time():
 	return reload
-func get_spell_type():
+func get_card_type():
 	return type

@@ -16,7 +16,7 @@ func _init(name:String):
 	
 func set_is_enemy(val:bool)->void:
 	is_enemy = val
-func is_enemy()->bool:
+func get_is_enemy()->bool:
 	return is_enemy
 func set_bounty(val:int)->void:
 	bounty = val
