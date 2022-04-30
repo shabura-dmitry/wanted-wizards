@@ -20,7 +20,7 @@ func _on_Quit_pressed():
 	get_tree().quit()
 func fade():
 	$Tween.interpolate_property($SplashScreen, "modulate:a",
-	1.0,0.0,2,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	1.0,0.0,.5,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Tween.start()
 	yield($Tween, "tween_all_completed")
 	$SplashScreen.queue_free()

@@ -15,11 +15,11 @@ func update():
 		name_label.text = str(character_data.get_character_name())
 		character_sprite.texture_normal = load(character_data.get_sprite())
 		
-		for card in character_data.get_deck():
-			var new_card = card_template.instance()
-			new_card.card =card
-			new_card.update()
-			starter_deck.add_child(new_card)
+#		for card in character_data.get_deck():
+#			var new_card = card_template.instance()
+#			new_card.card =card
+#			new_card.update()
+#			starter_deck.add_child(new_card)
 
 
 func _on_CharacterSprite_pressed():

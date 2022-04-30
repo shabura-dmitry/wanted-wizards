@@ -13,10 +13,14 @@ onready var PartyMemberScene = load("res://Scenes/Character.tscn")
 
 onready var enemy_container = get_node("M/C2/M/Enemies")
 onready var enemy_slots = enemy_container.get_children()
+var next_zoneded
 
 func _ready():
-	print(zone_prog)
+	
+	#print(zone_prog)
 	spawn_party()
+	for p in party_data:
+		p.set_deck(SavingLoading.game_data["full_deck"])
 	zone_prog_path_pos.offset = 44 * zone_prog
 	zone_prog_indicator.rect_position = zone_prog_path_pos.position
 	if zone_prog == -1:
@@ -27,17 +31,41 @@ func generate_zones():
 	zone_q = ZoneManager.get_zones(max_zones)
 	SavingLoading.zone_data["zone_q"] = zone_q
 	
+	
+
+func _process(delta):
+	var closest_enemy
+	for s in range(0, enemy_slots.size()):
+		if enemy_slots[s].get_child_count() >0:
+			closest_enemy= enemy_slots[s].get_child(0)
+	if !closest_enemy and !next_zoneded:
+		next_zoneded = true
+		next_zone()
+		
+	if  !closest_enemy and zone_prog >= 9:
+		SavingLoading.zone_data["zone_prog"] = -1
+		zone_prog = SavingLoading.zone_data["zone_prog"]
+		generate_zones()
+		zone_prog_path_pos.offset = 44 * zone_prog
+		zone_prog_indicator.rect_position = zone_prog_path_pos.position
+		next_zone()
+
+		
+		
 func next_zone():
 
 	
 	if zone_prog < max_zones-1:
 		zone_prog +=1
+		print(zone_prog)
 		SavingLoading.zone_data["zone_prog"] = zone_prog
 		zone_prog_path_pos.offset = 44 * zone_prog
 		zone_prog_indicator.rect_position = zone_prog_path_pos.position
 		
 		if zone_q[zone_prog].is_class("BattleZone"):
+			print("battle")
 			spawn_enemies()
+			next_zoneded = false
 			for p in party_slots:
 				if p.get_child_count() >0:
 					p.get_child(0).set_can_fight(true)
@@ -45,6 +73,7 @@ func next_zone():
 			
 			
 		if zone_q[zone_prog].is_class("ShopZone"):
+			print("shop")
 			SavingLoading.zone_data["zone_prog"] = zone_prog
 			get_tree().get_root().get_node("Game").call_deferred("set_current_scene","res://Scenes/ShopZone.tscn")
 			queue_free()
@@ -75,10 +104,7 @@ func spawn_party():
 			if !slot.get_child(0).is_connected("card_played", self, "_on_card_played"):
 				slot.get_child(0).connect("card_played", self, "_on_card_played")
 				
-				
-	for slot in party_slots:
-		if slot.get_child_count()>0:
-			print(slot)
+	
 
 func spawn_enemies():
 		#populate enemy slots
@@ -111,7 +137,17 @@ func _on_card_played(data):
 			"enemy":
 				if data["origin"].can_fight:
 					if attack_enemy(played_card_type,card_damage) == -1 and zone_q[zone_prog].is_class("BattleZone"):
-						call_deferred("next_zone")
+							var closest_enemy
+							for s in range(0, enemy_slots.size()):
+								if enemy_slots[s].get_child_count() >0:
+									closest_enemy= enemy_slots[s].get_child(0)
+								if  !closest_enemy and zone_prog >= 9:
+									SavingLoading.zone_data["zone_prog"] = -1
+									zone_prog = SavingLoading.zone_data["zone_prog"]
+									generate_zones()
+									zone_prog_path_pos.offset = 44 * zone_prog
+									zone_prog_indicator.rect_position = zone_prog_path_pos.position
+									call_deferred("next_zone")
 
 func attack_enemy(played_card_type, card_damage):
 	var closest_enemy
@@ -122,7 +158,13 @@ func attack_enemy(played_card_type, card_damage):
 		closest_enemy.play_hit_effect(played_card_type)
 		closest_enemy.take_damage(card_damage)
 		if closest_enemy.character_data.is_dead():
+
 			closest_enemy.queue_free()
+			
+			
+
+			
+			
 	else:
 		return -1
 		

@@ -6,7 +6,7 @@ onready var m_label = get_node("MusicOption/Music Volume Label")
 onready var s_label = get_node("SoundOption/Sound Volume Label")
 
 func _ready():
-	print(str(SavingLoading.settings["music_volume"]))
+	#print(str(SavingLoading.settings["music_volume"]))
 	music_volume.value = SavingLoading.settings["music_volume"]
 	sound_volume.value = SavingLoading.settings["sound_volume"]
 	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/ShopZone.gd" type="Script" id=1]
 [ext_resource path="res://Assets/UI/Fonts/PixelRPG.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/UI/Menu Screen2.png" type="Texture" id=3]
 
 [sub_resource type="Shader" id=8]
 code = "shader_type canvas_item;
@@ -30,17 +31,22 @@ font_data = ExtResource( 2 )
 [sub_resource type="ShaderMaterial" id=5]
 shader = SubResource( 4 )
 
-[node name="ShopZone" type="VBoxContainer"]
+[node name="TextureRect" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+
+[node name="ShopZone" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/separation = 50
 script = ExtResource( 1 )
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="ShopZone"]
 margin_right = 960.0
 margin_bottom = 50.0
 
-[node name="Label" type="Label" parent="CenterContainer"]
+[node name="Label" type="Label" parent="ShopZone/CenterContainer"]
 material = SubResource( 9 )
 margin_left = 255.0
 margin_right = 705.0
@@ -54,7 +60,7 @@ custom_fonts/font = SubResource( 3 )
 text = "CHOOSE A CARD!"
 align = 1
 
-[node name="New Cards" type="GridContainer" parent="."]
+[node name="New Cards" type="GridContainer" parent="ShopZone"]
 material = SubResource( 5 )
 margin_left = 480.0
 margin_top = 100.0
@@ -65,11 +71,3 @@ size_flags_vertical = 4
 custom_constants/vseparation = 0
 custom_constants/hseparation = 15
 columns = 3
-
-[node name="Button" type="Button" parent="."]
-margin_top = 150.0
-margin_right = 960.0
-margin_bottom = 170.0
-text = "Skip"
-
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -16,6 +16,7 @@ func get_class(): return "ShopZone"
 
 
 
-func _on_Button_pressed():
-	get_tree().get_root().get_node("Game").call_deferred("set_current_scene","res://Scenes/BattleScene.tscn")
-	queue_free()
+func _process(delta):
+	if $"New Cards".get_child_count() <3:
+		get_tree().get_root().get_node("Game").call_deferred("set_current_scene","res://Scenes/BattleScene.tscn")
+		queue_free()

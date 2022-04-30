@@ -1,8 +1,35 @@
 extends Node
 enum EnemyList {Wizard, WizardDog, WizardMushroom}
-
+var WizardSprite = "res://Assets/Characters/Wizard1.png"
+var WizardDogSprite = "res://Assets/Characters/Wizard_Dog1.png"
+var WizardMushroomSprite = "res://Assets/Characters/Mushroom_Wizard1.png"
+var TreasureSprite = "res://Assets/Characters/Treasure1.png"
+var SlingerSprite = "res://Assets/Characters/Cowboy1.png"
+var KnightSprite = "res://Assets/Characters/Knight1.png"
+var SorcererSprite = "res://Assets/Characters/Sorceror1.png"
 func img(string):
 	return "res://Assets/Characters/"+string +".png"
+	
+	
+
+##-------------- FUTURE FORMAT: ------------------------
+#var enemy = [
+#	new_enemy(true,"Wizard",50,WizardSprite,Vector2(1,2),1)
+#]
+#func new_enemy(is_enemy,_name,max_health, sprite, battle_timer_range,bounty):
+#	var data =CharacterData.new(is_enemy,_name,max_health,sprite,battle_timer_range,bounty)
+#	if is_enemy:
+#		data.set_is_enemy(true)
+#		data.set_bounty(1)
+#		data.set_deck(CardManager.generate_spell(CardManager.Spells.BasicSpell))
+#	else:
+#		data.set_is_enemy(false)
+#		data.set_bounty(0)
+#		data.set_deck(CardManager.generate_card(CardManager.Cards.BasicShot))
+##------------------------------------------------------
+	
+	
+	
 func get_enemy(enemy):
 	match enemy:
 		EnemyList.Wizard:

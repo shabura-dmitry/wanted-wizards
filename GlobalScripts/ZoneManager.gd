@@ -30,9 +30,9 @@ func get_shop(card_num,card_rarity, cost_mult):
 	for _n in range(0,card_num):
 		var card_choice = CardManager.Cards.keys()[randi() % CardManager.Cards.keys().size()]
 		var card = CardManager.generate_card(CardManager.Cards[card_choice])
-		while card.get_card_rarity() != card_rarity:
-			card_choice = CardManager.Cards.keys()[randi() % CardManager.Cards.keys().size()]
-			card = CardManager.generate_card(CardManager.Cards[card_choice])
+	#	while card.get_card_rarity() != card_rarity:
+		card_choice = CardManager.Cards.keys()[randi() % CardManager.Cards.keys().size()]
+		card = CardManager.generate_card(CardManager.Cards[card_choice])
 		
 		card.set_card_cost(card.get_card_cost() * cost_mult)
 
@@ -89,7 +89,8 @@ func get_enemy_q(zone_type,battle_type,num_enemies, diff):
 	for n in range(0,num_enemies):
 		var enemy = possible_enemies[randi() % possible_enemies.size()]
 		enemy = CharacterPresets.get_enemy(enemy)
-		enemy.set_health(enemy.get_health() * diff)
+		enemy.set_max_health(enemy.get_health() * (SavingLoading.game_data["total_killed"] * 100))
+		enemy.set_health(enemy.get_max_health())
 		enemy.set_default_party_pos(n+1)
 		enemy_data.append(enemy)
 		

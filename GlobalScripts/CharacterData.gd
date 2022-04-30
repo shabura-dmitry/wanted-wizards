@@ -14,6 +14,7 @@ var bounty:int = 0 setget set_bounty,get_bounty
 func _init(name:String):
 	character_name = name	
 	
+
 func set_is_enemy(val:bool)->void:
 	is_enemy = val
 func get_is_enemy()->bool:
