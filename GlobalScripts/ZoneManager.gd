@@ -8,7 +8,7 @@ func _ready():
 func get_zones(num_zones):
 	var zone_q = []
 	
-	zone_q.append(get_battle(ZoneTypes.Battle,1,1))
+	zone_q.append(get_shop(3,1,1))
 	zone_q.append(get_battle(ZoneTypes.Battle,1,1))
 	zone_q.append(get_battle(ZoneTypes.Battle,2,1))
 	zone_q.append(get_battle(ZoneTypes.Battle,2,1))
@@ -17,7 +17,7 @@ func get_zones(num_zones):
 	zone_q.append(get_battle(ZoneTypes.Battle,3,1))##
 	zone_q.append(get_shop(3,1,1))
 	zone_q.append(get_battle(ZoneTypes.Battle,4,1))
-	zone_q.append(get_battle(ZoneTypes.Boss,5,1))
+	zone_q.append(get_battle(ZoneTypes.Battle,5,1))
 	#zone_q.append(get_shop(3,1,1))
 	
 	
@@ -107,7 +107,7 @@ func get_enemy_q(zone_type,battle_type,num_enemies, diff):
 	for n in range(0,num_enemies):
 		var enemy = possible_enemies[randi() % possible_enemies.size()]
 		enemy = CharacterPresets.get_enemy(enemy)
-		enemy.set_max_health(enemy.get_max_health()) #+ (SavingLoading.game_data["total_killed"] * 100))
+		enemy.set_max_health(enemy.get_max_health() +(SavingLoading.game_data["total_killed"] * 3))
 		enemy.set_health(enemy.get_max_health())
 		enemy.set_default_party_pos(n+1)
 		enemy_data.append(enemy)

@@ -35,6 +35,8 @@ func get_card_name()->String:
 	return card_name
 func get_damage():
 	return damage
+func set_damage(val):
+	damage = val
 func get_card_sound():
 	return card_sound
 func get_reload_time():

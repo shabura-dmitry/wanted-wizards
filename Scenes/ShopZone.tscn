@@ -1,8 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/ShopZone.gd" type="Script" id=1]
 [ext_resource path="res://Assets/UI/Fonts/PixelRPG.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/UI/Menu Screen2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/GunIconMockup.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Cards/Card_Template.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Cards/Card_Pictures/9mm_friendly_fire.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Cards/Card_Pictures/Clock_Icon.png" type="Texture" id=7]
 
 [sub_resource type="Shader" id=10]
 code = "shader_type canvas_item;
@@ -31,6 +35,13 @@ font_data = ExtResource( 2 )
 [sub_resource type="ShaderMaterial" id=5]
 shader = SubResource( 4 )
 
+[sub_resource type="DynamicFont" id=11]
+size = 12
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_space = -7
+font_data = ExtResource( 2 )
+
 [node name="TextureRect" type="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -48,8 +59,8 @@ margin_bottom = 50.0
 
 [node name="Label" type="Label" parent="ShopZone/CenterContainer"]
 material = SubResource( 9 )
-margin_left = 255.0
-margin_right = 705.0
+margin_left = 202.0
+margin_right = 757.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 450, 50 )
 custom_colors/font_color = Color( 0.615686, 1, 0, 1 )
@@ -57,17 +68,116 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 7
 custom_constants/shadow_offset_y = 4
 custom_fonts/font = SubResource( 3 )
-text = "CHOOSE A CARD!"
+text = "CHOOSE AN UPGRADE!"
 align = 1
 
 [node name="New Cards" type="GridContainer" parent="ShopZone"]
 material = SubResource( 5 )
-margin_left = 480.0
+margin_left = 273.0
 margin_top = 100.0
-margin_right = 480.0
-margin_bottom = 100.0
+margin_right = 687.0
+margin_bottom = 292.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 custom_constants/vseparation = 0
 custom_constants/hseparation = 15
 columns = 3
+
+[node name="FireSpeed" type="TextureButton" parent="ShopZone/New Cards"]
+margin_right = 128.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 128, 192 )
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="ShopZone/New Cards/FireSpeed"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 120.0
+margin_bottom = 72.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="Name2" type="Label" parent="ShopZone/New Cards/FireSpeed"]
+margin_left = -6.0
+margin_top = 121.0
+margin_right = 127.0
+margin_bottom = 133.0
+hint_tooltip = "Damage"
+mouse_filter = 1
+custom_colors/font_color = Color( 0.0705882, 0.952941, 0.333333, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "+ 0.1 Fire Speed"
+align = 1
+valign = 1
+
+[node name="MaxHP" type="TextureButton" parent="ShopZone/New Cards"]
+margin_left = 143.0
+margin_right = 271.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 128, 192 )
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="ShopZone/New Cards/MaxHP"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 120.0
+margin_bottom = 72.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="Name2" type="Label" parent="ShopZone/New Cards/MaxHP"]
+margin_left = -6.0
+margin_top = 121.0
+margin_right = 127.0
+margin_bottom = 133.0
+hint_tooltip = "Damage"
+mouse_filter = 1
+custom_colors/font_color = Color( 0.0705882, 0.952941, 0.333333, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "+100 Max HP"
+align = 1
+valign = 1
+
+[node name="BaseDmg" type="TextureButton" parent="ShopZone/New Cards"]
+margin_left = 286.0
+margin_right = 414.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 128, 192 )
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="ShopZone/New Cards/BaseDmg"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 120.0
+margin_bottom = 72.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="Name2" type="Label" parent="ShopZone/New Cards/BaseDmg"]
+margin_left = -2.0
+margin_top = 123.0
+margin_right = 131.0
+margin_bottom = 135.0
+hint_tooltip = "Damage"
+mouse_filter = 1
+custom_colors/font_color = Color( 0.0705882, 0.952941, 0.333333, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "ALL CARDS +1 DMG"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="ShopZone/New Cards/FireSpeed" to="ShopZone" method="_on_FireSpeed_pressed"]
+[connection signal="pressed" from="ShopZone/New Cards/MaxHP" to="ShopZone" method="_on_MaxHP_pressed"]
+[connection signal="pressed" from="ShopZone/New Cards/BaseDmg" to="ShopZone" method="_on_BaseDmg_pressed"]

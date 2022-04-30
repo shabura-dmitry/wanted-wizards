@@ -188,7 +188,7 @@ func attack_enemy(played_card_type, card_damage):
 		closest_enemy.play_hit_effect(played_card_type)
 		closest_enemy.take_damage(card_damage)
 		if closest_enemy.character_data.is_dead():
-
+			SavingLoading.game_data["total_killed"] +=1
 			closest_enemy.queue_free()
 			
 			
