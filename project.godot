@@ -44,11 +44,13 @@ config/icon="res://icon.png"
 
 [autoload]
 
-SavingLoading="*res://GlobalScripts/SavingLoading.gd"
-CardManager="*res://GlobalScripts/CardManager.gd"
+GameManager="*res://GlobalScripts/GameManager.gd"
+SceneManager="*res://GlobalScripts/SceneManager.gd"
 CharacterPresets="*res://GlobalScripts/CharacterPresets.gd"
-AudioManager="*res://GlobalScripts/AudioManager.gd"
+CardManager="*res://GlobalScripts/CardManager.gd"
+SavingLoading="*res://GlobalScripts/SavingLoading.gd"
 ZoneManager="*res://GlobalScripts/ZoneManager.gd"
+AudioManager="*res://GlobalScripts/AudioManager.gd"
 
 [display]
 
