@@ -18,5 +18,7 @@ func get_class(): return "ShopZone"
 
 func _process(delta):
 	if $"New Cards".get_child_count() <3:
+		for p in SavingLoading.game_data["party"]:
+			p.set_health(p.get_max_health())
 		get_tree().get_root().get_node("Game").call_deferred("set_current_scene","res://Scenes/BattleScene.tscn")
 		queue_free()

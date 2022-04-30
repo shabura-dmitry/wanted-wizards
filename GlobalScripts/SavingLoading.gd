@@ -8,6 +8,9 @@ var played_splash = false
 
 
 		
+func reset():
+	game_data = {"party":[], "bounty_collected":0, "full_deck" : [], "total_killed":0}
+	zone_data = {"zone_prog":-1, "zone_q": []}
 func save_game()->void:
 	var file = File.new()
 	file.open(game_path, File.WRITE)

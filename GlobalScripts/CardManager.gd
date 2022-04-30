@@ -1,6 +1,10 @@
 extends Node
 var CardBase = load("res://Scripts/CardBase.gd")
 enum Cards {BasicShot,HeavyShot,SelfShot,ToughLove}
+enum HealingCards {SelfShot,ToughLove}
+enum AttackCards {BasicShot,HeavyShot}
+
+
 enum Spells {BasicSpell}
 enum CardTypes {Attack, Heal}
 
@@ -31,7 +35,7 @@ func generate_card(card):
 		
 		Cards.ToughLove:
 			return CardBase.new(CardTypes.Heal, "Tough Love","res://Assets/Cards/Card_Pictures/9mm_friendly_fire.png",
-			"heal_1",-20,4,3,20)
+			"heal_1",-5,4,3,20)
 		
 			
 		
@@ -41,4 +45,4 @@ func generate_spell(spell):
 			return SpellBase.new(CardTypes.Attack,"Basic Spell",
 			"res://Assets/Cards/Card_Pictures/Barrier.png",
 			"spell_1",
-			8,0)
+			10,0)

@@ -76,12 +76,12 @@ func get_slinger():
 func get_knight():
 	var knight= CharacterData.new("Knight")
 	knight.add_to_deck(CardManager.generate_card(CardManager.Cards.HeavyShot))
-	knight.add_to_deck(CardManager.generate_card(CardManager.Cards.HeavyShot))
-	knight.add_to_deck(CardManager.generate_card(CardManager.Cards.HeavyShot))
-	knight.add_to_deck(CardManager.generate_card(CardManager.Cards.ToughLove))
+	#knight.add_to_deck(CardManager.generate_card(CardManager.Cards.HeavyShot))
+	#knight.add_to_deck(CardManager.generate_card(CardManager.Cards.HeavyShot))
+	#knight.add_to_deck(CardManager.generate_card(CardManager.Cards.ToughLove))
 	
-	knight.set_max_health(60)
-	knight.set_health(60)
+	knight.set_max_health(600)
+	knight.set_health(600)
 
 	knight.set_default_party_pos(1)
 	knight.set_current_party_pos(1)

@@ -50,8 +50,15 @@ func _process(delta):
 		zone_prog_indicator.rect_position = zone_prog_path_pos.position
 		next_zone()
 
-		
-		
+	var p_count =0
+	for p in party_slots:
+		if p.get_child_count()>0:
+			p_count +=1
+	
+	if p_count ==0:
+		SavingLoading.reset()
+		get_tree().get_root().get_node("Game").set_current_scene("res://Scenes/GameOver.tscn")
+		self.queue_free()
 func next_zone():
 
 	
@@ -70,6 +77,11 @@ func next_zone():
 				if p.get_child_count() >0:
 					p.get_child(0).set_can_fight(true)
 					p.show()
+					
+			for e in enemy_slots:
+				if e.get_child_count() >0:
+					e.get_child(0).set_can_fight(true)
+
 			
 			
 		if zone_q[zone_prog].is_class("ShopZone"):
@@ -148,6 +160,24 @@ func _on_card_played(data):
 									zone_prog_path_pos.offset = 44 * zone_prog
 									zone_prog_indicator.rect_position = zone_prog_path_pos.position
 									call_deferred("next_zone")
+			"character":
+				if data["origin"].can_fight:
+					attack_character(played_card_type,card_damage)
+
+					
+func attack_character(played_card_type,card_damage):
+	var closest_char
+	for s in range(0, party_slots.size()):
+		if party_slots[s].get_child_count() >0:
+			closest_char= party_slots[s].get_child(0)
+	if closest_char:
+		closest_char.play_hit_effect(played_card_type)
+		closest_char.take_damage(card_damage)
+		if closest_char.character_data.is_dead():
+			closest_char.queue_free()
+			
+	else:
+		return -1
 
 func attack_enemy(played_card_type, card_damage):
 	var closest_enemy

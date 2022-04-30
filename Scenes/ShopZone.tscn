@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/UI/Fonts/PixelRPG.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/UI/Menu Screen2.png" type="Texture" id=3]
 
-[sub_resource type="Shader" id=8]
+[sub_resource type="Shader" id=10]
 code = "shader_type canvas_item;
 uniform float height = 2.0;
 uniform float speed = 3.0;
@@ -14,7 +14,7 @@ void vertex(){
 }"
 
 [sub_resource type="ShaderMaterial" id=9]
-shader = SubResource( 8 )
+shader = SubResource( 10 )
 shader_param/height = 2.0
 shader_param/speed = 3.0
 shader_param/frequency = 25.0

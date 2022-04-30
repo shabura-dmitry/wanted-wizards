@@ -22,7 +22,7 @@ func _ready():
 		CardManager.CardTypes.Attack:
 			dmg.text = str(card.get_damage()) + \" DMG\"
 		CardManager.CardTypes.Heal:
-			dmg.text = str(card.get_damage()) + \" HP\"
+			dmg.text = str(-card.get_damage()) + \" HP\"
 
 	
 	card_name.text = card.get_card_name()
