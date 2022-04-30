@@ -35,13 +35,7 @@ func get_shop(card_num,card_rarity, cost_mult):
 			card = CardManager.generate_card(CardManager.Cards[card_choice])
 		
 		card.set_card_cost(card.get_card_cost() * cost_mult)
-
-		var card_template = load("res://Scenes/Cards/CardTemplate.tscn").instance()
-		card_template.card = card
-		cards.append(card_template)
-
-		
-	
+		cards.append(card)
 	shop.shop_items = cards
 	shop.name = "ShopZone"
 	return shop

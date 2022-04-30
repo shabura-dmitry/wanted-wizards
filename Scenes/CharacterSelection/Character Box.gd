@@ -24,6 +24,4 @@ func update():
 
 func _on_CharacterSprite_pressed():
 	SavingLoading.game_data["party"] = [character_data]
-	for card in character_data.get_deck():
-		SavingLoading.game_data["full_deck"].append(card)
 	get_tree().get_root().get_node("Game").set_current_scene("res://Scenes/BattleScene.tscn")

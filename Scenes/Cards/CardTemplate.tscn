@@ -6,32 +6,25 @@
 [ext_resource path="res://Assets/Cards/Card_Pictures/9mm_basic_shot.png" type="Texture" id=5]
 
 [sub_resource type="GDScript" id=1]
-script/source = "extends TextureButton
+script/source = "extends TextureRect
 var card
 onready var card_name= get_node(\"M/Stats/Name\")
 onready var dmg = get_node(\"M/Stats/Damage\")
 onready var sprite = get_node(\"M/C/M/CardPicture\")
 onready var reload = get_node(\"M/Stats/Reload Time\")
 onready var color = CardManager.get_type_color(card.get_card_type())
-onready var cost = get_node(\"Cost\")
-onready var can_buy =false
 func _ready():
-
-	cost.hide()
 	match card.get_card_type():
 		CardManager.CardTypes.Attack:
 			dmg.text = str(card.get_damage()) + \" DMG\"
 		CardManager.CardTypes.Heal:
 			dmg.text = str(card.get_damage()) + \" HP\"
-
-	
+			
+			
 	card_name.text = card.get_card_name()
 	card_name.add_color_override(\"font_color\", color)
 	dmg.add_color_override(\"font_color\",color)
 	reload.text = str(card.get_reload_time()) + \" SEC\"
-	
-	
-
 			
 
 #func update():
@@ -53,14 +46,6 @@ func _ready():
 #	card_name.text = card.get_card_name()
 #
 #	reload.text = str(card.get_reload_time() ) + \" SEC\"
-
-
-func _on_CardTemplate_pressed():
-	if can_buy:
-		SavingLoading.game_data[\"full_deck\"].append(card)
-		print(SavingLoading.game_data[\"full_deck\"])
-		queue_free()
-		
 "
 
 [sub_resource type="DynamicFont" id=2]
@@ -71,45 +56,27 @@ extra_spacing_char = -1
 extra_spacing_space = -7
 font_data = ExtResource( 3 )
 
-[node name="CardTemplate" type="TextureButton"]
-rect_min_size = Vector2( 64, 96 )
-texture_normal = ExtResource( 2 )
+[node name="CardTemplate" type="TextureRect"]
+margin_right = 64.0
+margin_bottom = 96.0
+texture = ExtResource( 2 )
 script = SubResource( 1 )
-
-[node name="Cost" type="Label" parent="."]
-anchor_top = -0.6
-anchor_bottom = -0.6
-margin_left = 3.0
-margin_top = 45.6
-margin_right = 61.0
-margin_bottom = 57.6
-mouse_filter = 1
-custom_colors/font_color = Color( 0.980392, 1, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 1 )
-text = "$0"
-align = 1
 
 [node name="M" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 3.0
 margin_top = 3.0
-margin_right = -3.0
-margin_bottom = -3.0
-mouse_filter = 1
+margin_right = -67.0
+margin_bottom = -100.0
 
 [node name="C" type="Control" parent="M"]
-margin_right = 58.0
-margin_bottom = 90.0
-mouse_filter = 1
 
 [node name="M" type="MarginContainer" parent="M/C"]
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 57.0
 margin_bottom = 33.0
-mouse_filter = 1
 
 [node name="CardPicture" type="TextureRect" parent="M/C/M"]
 margin_right = 56.0
@@ -119,8 +86,6 @@ expand = true
 stretch_mode = 7
 
 [node name="Stats" type="Control" parent="M"]
-margin_right = 58.0
-margin_bottom = 90.0
 mouse_filter = 1
 
 [node name="Name" type="Label" parent="M/Stats"]
@@ -162,5 +127,3 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = " SEC"
 align = 1
-
-[connection signal="pressed" from="." to="." method="_on_CardTemplate_pressed"]
